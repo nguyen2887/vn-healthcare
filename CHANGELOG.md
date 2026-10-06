@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3 — 2026-10-06
+
+- Audit nhiều lượt: người gộp tự kiểm file kết quả của từng lượt thay vì chỉ chờ thông báo hoàn tất.
+
 ## 0.1.2 — 2026-10-06
 
 - Audit nhiều lượt: mỗi subagent ghi kết quả lượt ra file để bước gộp không phụ thuộc vào tin nhắn trả về.

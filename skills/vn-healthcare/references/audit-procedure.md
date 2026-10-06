@@ -37,7 +37,7 @@ Chỉ ghi "điểm làm tốt" khi đã xác minh bằng code; một khẳng đ�
 2. **Luồng nghiệp vụ**: trạng thái, danh tính người thực hiện, khóa sau hoàn tất, xóa dây chuyền (mục trên).
 3. **Bảo mật & vận hành**: xác thực/phân quyền mọi endpoint đọc-ghi dữ liệu người bệnh, cách ly giữa cơ sở (tenant), lộ dữ liệu qua log/lỗi/API, cấu hình môi trường và triển khai (mock ở production, container, cổng mở, lưu trữ ở nước ngoài).
 
-Nếu môi trường cho phép chạy subagent song song, giao mỗi lượt cho một subagent (kèm danh sách module/thư mục cần đọc) rồi tự gộp; nếu không, làm tuần tự. Yêu cầu mỗi subagent **ghi kết quả lượt của mình ra file** (vd `audit-pass-<tên>.md` cạnh báo cáo cuối) thay vì chỉ trả lời trong tin nhắn — kết quả trả về có thể không tới được người gộp, còn file thì luôn đọc lại được. Ghi rõ trong "Phạm vi" phần nào của repo đã đọc và phần nào chưa.
+Nếu môi trường cho phép chạy subagent song song, giao mỗi lượt cho một subagent (kèm danh sách module/thư mục cần đọc) rồi tự gộp; nếu không, làm tuần tự. Yêu cầu mỗi subagent **ghi kết quả lượt của mình ra file** (vd `audit-pass-<tên>.md` cạnh báo cáo cuối) thay vì chỉ trả lời trong tin nhắn — kết quả trả về có thể không tới được người gộp, còn file thì luôn đọc lại được. Người gộp nên tự kiểm sự có mặt của các file này (không chỉ chờ thông báo hoàn tất) trước khi kết luận các lượt còn đang chạy. Ghi rõ trong "Phạm vi" phần nào của repo đã đọc và phần nào chưa.
 
 ## 3. Chấm điểm
 

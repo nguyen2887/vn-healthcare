@@ -1,7 +1,7 @@
 {
   "name": "vn-healthcare",
   "description": "Kim chỉ nam pháp lý Việt Nam cho phần mềm y tế (HIS, EMR, CIS, LIS, PACS, nhà thuốc, khám từ xa, AI): luật/thông tư hiện hành có link, tính năng bắt buộc, pattern thiết kế, checklist audit.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": {
     "name": "nguyen2887"
   },
