@@ -86,7 +86,7 @@ Giữ câu trả lời tập trung vào những gì luật đòi hỏi và patte
 
 1. Xác định bối cảnh, chọn domain.
 2. Đọc `references/audit-procedure.md` để nắm quy trình và mẫu báo cáo.
-3. Gom checklist (`<CODE>-Ann`) của các domain liên quan; với mỗi mục, thu bằng chứng từ phần mềm thật: mã nguồn, schema CSDL, cấu hình, log, UI, tài liệu, hợp đồng. Khi có quyền truy cập codebase, đọc code/schema để kiểm chứng thay vì đoán.
+3. Gom checklist (`<CODE>-Ann`) của các domain liên quan; với mỗi mục, thu bằng chứng từ phần mềm thật: mã nguồn, schema CSDL, cấu hình, log, UI, tài liệu, hợp đồng. Khi có quyền truy cập codebase, đọc code/schema để kiểm chứng thay vì đoán. Với codebase lớn, chia nhiều lượt (pháp lý / luồng nghiệp vụ / bảo mật-vận hành) như `audit-procedure.md` mô tả, rồi gộp kết quả.
 4. Chấm từng mục: `Đạt` / `Không đạt` / `Một phần` / `Không áp dụng` / `Chưa đủ bằng chứng`. Mục `BẮT BUỘC?` được báo riêng như rủi ro, không tính là lỗi chắc chắn.
 5. Xuất báo cáo theo mẫu trong `audit-procedure.md`, sắp lỗi theo mức nghiêm trọng × hạn chót.
 

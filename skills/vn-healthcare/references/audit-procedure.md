@@ -30,7 +30,14 @@ Khi có quyền truy cập codebase: grep/đọc code để kiểm chứng, trí
 - **Xóa dây chuyền** (CASCADE) có làm mất lịch sử phiên bản hoặc nhật ký không.
 - **Cấu hình môi trường**: mock/fake (lưu trữ, ký số, cổng) có thể chạy ở production không; giá trị cứng thay cho biến môi trường.
 
-Chỉ ghi "điểm làm tốt" khi đã xác minh bằng code; một khẳng định an toàn sai còn nguy hiểm hơn bỏ sót.
+Chỉ ghi "điểm làm tốt" khi đã xác minh bằng code; một khẳng định an toàn sai còn nguy hiểm hơn bỏ sót. **Lần theo tới chỗ thực thi** trước khi kết luận một cơ chế đang hoạt động: hàm kiểm tra có thực sự được gọi ở luồng đó không; cấu hình hiệu lực là giá trị được truyền khi module khởi tạo (DI/factory), không phải tên biến hay file cấu hình mẫu; lifecycle hook có chạy với scope đó không. Không suy ra từ tên hàm, comment hay tài liệu.
+
+**Codebase lớn — audit nhiều lượt rồi gộp.** Một lượt đọc không phủ hết một repo vài trăm/nghìn file; mỗi lần chạy sẽ soi một góc khác nhau. Hãy chia ít nhất 3 lượt, mỗi lượt một trọng tâm, rồi gộp và khử trùng:
+1. **Pháp lý**: đối chiếu checklist các domain áp dụng (lưu trữ, ký số, liên thông, dữ liệu cá nhân, mã hóa, giấy tờ).
+2. **Luồng nghiệp vụ**: trạng thái, danh tính người thực hiện, khóa sau hoàn tất, xóa dây chuyền (mục trên).
+3. **Bảo mật & vận hành**: xác thực/phân quyền mọi endpoint đọc-ghi dữ liệu người bệnh, cách ly giữa cơ sở (tenant), lộ dữ liệu qua log/lỗi/API, cấu hình môi trường và triển khai (mock ở production, container, cổng mở, lưu trữ ở nước ngoài).
+
+Nếu môi trường cho phép chạy subagent song song, giao mỗi lượt cho một subagent (kèm danh sách module/thư mục cần đọc) rồi tự gộp; nếu không, làm tuần tự. Ghi rõ trong "Phạm vi" phần nào của repo đã đọc và phần nào chưa.
 
 ## 3. Chấm điểm
 

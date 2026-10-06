@@ -1,10 +1,20 @@
 {
   "name": "vn-healthcare",
   "description": "Kim chỉ nam pháp lý Việt Nam cho phần mềm y tế (HIS, EMR, CIS, LIS, PACS, nhà thuốc, khám từ xa, AI): luật/thông tư hiện hành có link, tính năng bắt buộc, pattern thiết kế, checklist audit.",
-  "version": "0.1.0",
-  "author": { "name": "nguyen2887" },
+  "version": "0.1.1",
+  "author": {
+    "name": "nguyen2887"
+  },
   "homepage": "https://github.com/nguyen2887/vn-healthcare",
   "repository": "https://github.com/nguyen2887/vn-healthcare",
   "license": "MIT",
-  "keywords": ["vietnam", "healthcare", "compliance", "emr", "his", "bhyt", "regulation"]
+  "keywords": [
+    "vietnam",
+    "healthcare",
+    "compliance",
+    "emr",
+    "his",
+    "bhyt",
+    "regulation"
+  ]
 }
