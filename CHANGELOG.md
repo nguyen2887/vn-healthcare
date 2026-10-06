@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 — 2026-10-06
+
+- Audit nhiều lượt: mỗi subagent ghi kết quả lượt ra file để bước gộp không phụ thuộc vào tin nhắn trả về.
+
 ## 0.1.1 — 2026-10-06
 
 - Audit: bắt buộc lần theo tới chỗ thực thi (hàm có được gọi không, cấu hình hiệu lực khi module khởi tạo) trước khi kết luận một cơ chế đang hoạt động hay ghi "điểm làm tốt".
