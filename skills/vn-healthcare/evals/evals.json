@@ -1,0 +1,79 @@
+{
+  "skill_name": "vn-healthcare",
+  "evals": [
+    {
+      "id": 1,
+      "name": "thiet-ke-phong-kham-bhyt",
+      "prompt": "bên tao đang làm phần mềm cho phòng khám tư (nội tổng quát + nha khoa), có khám BHYT, bán dạng SaaS. liệt kê giúp những gì luật bắt buộc phần mềm phải có, cái nào hạn trước 31/12/2026 thì ưu tiên, và gợi ý luôn thiết kế bảng đơn thuốc + bảng bệnh án sao cho đúng chuẩn",
+      "expected_output": "Danh sách nghĩa vụ theo domain (EMR, DUOC, BHYT, SKDT, DLCN, ANM, HTTT-BC, CHUYENKHOA, TC-MS) có số hiệu + điều khoản + mức + hạn; thứ tự ưu tiên theo hạn; thiết kế bảng đơn thuốc (mã đơn 14 ký tự ngẫu nhiên, gửi hệ thống đơn thuốc quốc gia, không sửa sau khi gửi) và bảng bệnh án (phiên bản, ký số, không sửa đè, thời hạn lưu); nêu nghĩa vụ vendor (giấy chứng nhận xử lý dữ liệu, lưu trữ trong nước).",
+      "files": [],
+      "assertions": [
+        "Nêu hạn triển khai bệnh án điện tử cho phòng khám (cơ sở không phải bệnh viện) là 31/12/2026 theo TT 13/2025/TT-BYT",
+        "Mã đơn thuốc: nêu định dạng 14 ký tự theo TT 26/2025, trong đó chỉ 7 ký tự giữa sinh ngẫu nhiên, không đánh số tăng dần",
+        "Nêu đơn thuốc phải gửi Hệ thống đơn thuốc quốc gia ngay sau khi khám (không gom cuối ngày)",
+        "Nêu đơn đã gửi không được sửa, phải kê đơn mới thay thế",
+        "Nêu file XML BHYT phải ký số trước khi gửi cổng giám định, có căn cứ NĐ 188/2025 hoặc QĐ 130/QĐ-BYT và mốc 01/01/2026",
+        "Nêu nghĩa vụ liên thông dữ liệu lượt khám lên Sổ sức khỏe điện tử / VNeID cho mọi người bệnh (không chỉ khám sức khỏe) từ 01/01/2026",
+        "Thiết kế bảng bệnh án có cơ chế phiên bản/ghi vết, không cho sửa đè nội dung đã ký",
+        "Nêu rõ ảnh chữ ký dán vào phiếu không thay được chữ ký số",
+        "Nêu đủ thời hạn lưu hồ sơ bệnh án theo TT 33/2025: 10 năm, 20 năm (tâm thần/TNLĐ/TNGT), 30 năm (tử vong)",
+        "Nêu nghĩa vụ Giấy chứng nhận đủ điều kiện kinh doanh dịch vụ xử lý dữ liệu cá nhân (NĐ 356/2025) cho vendor SaaS",
+        "Không trích văn bản đã hết hiệu lực như thể còn hiệu lực (TT 46/2018, NĐ 146/2018, NĐ 13/2023, TT 52/2017, TT 53/2017, NĐ 123/2020, NĐ 85/2016, QĐ 4469) và không viết NĐ 85/2016 bị NĐ 331/2026 thay thế",
+        "Các nghĩa vụ chính có link tới văn bản (URL trỏ tới vanban.chinhphu.vn / datafiles.chinhphu.vn / congbao / moh.gov.vn / baohiemxahoi.gov.vn hoặc tương đương), không chỉ ghi số hiệu",
+        "Phần tóm tắt đầu bài không nói chắc hơn phần chi tiết: các ý có căn cứ chưa rõ (BẮT BUỘC?/suy luận/dự thảo) được ghi rõ là chưa chắc ngay trong tóm tắt",
+        "Có mục riêng liệt kê điểm chưa rõ/cần xác minh, nói rõ nên hỏi ai"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "audit-clinicone",
+      "prompt": "audit giúp tao phân hệ bệnh án của ClinicOne theo luật VN hiện hành, file schema với ghi chú ở evals/files/emr-sample/. cần báo cáo lỗi theo mức độ, có căn cứ, có đề xuất sửa",
+      "expected_output": "Báo cáo audit theo mẫu: phát hiện sửa đè bệnh án đã ký, ảnh chữ ký thay cho ký số, mã đơn tăng dần, gửi đơn cuối ngày, tài khoản dùng chung, xóa log 90 ngày, xóa bệnh án sau 5 năm (sai thời hạn 10/20/30 năm), ICD nhập tự do, HIV status lộ, XML BHYT không ký số và gửi cuối tháng, hosting Singapore (chuyển dữ liệu ra nước ngoài), không DPA, chia dữ liệu cho bảo hiểm, vendor chưa có giấy chứng nhận, CCCD làm khóa duy nhất. Mỗi lỗi có ID yêu cầu, căn cứ, mức nghiêm trọng, đề xuất.",
+      "files": [
+        "evals/files/emr-sample/schema.sql",
+        "evals/files/emr-sample/NOTES.md"
+      ],
+      "assertions": [
+        "Phát hiện lỗi sửa trực tiếp bệnh án sau khi đã ký (cần giữ phiên bản, không sửa đè)",
+        "Phát hiện ảnh chữ ký (signature_img) không thay được chữ ký số",
+        "Phát hiện mã đơn thuốc tăng dần sai quy định (phải có phần sinh ngẫu nhiên theo TT 26/2025)",
+        "Phát hiện gửi đơn lên hệ thống đơn thuốc quốc gia bằng job cuối ngày là không đúng thời điểm",
+        "Phát hiện tài khoản dùng chung ('letan') vi phạm yêu cầu tài khoản cá nhân và truy vết",
+        "Phát hiện xóa bệnh án sau 5 năm là trái thời hạn lưu trữ (tối thiểu 10 năm theo TT 33/2025)",
+        "Phát hiện XML BHYT không ký số là vi phạm (bắt buộc từ 01/01/2026, NĐ 188/2025)",
+        "Phát hiện gửi XML BHYT cuối tháng là sai thời hạn gửi (TT 48/2017)",
+        "Phát hiện lưu dữ liệu ở AWS Singapore là chuyển dữ liệu cá nhân ra nước ngoài/không lưu trong nước, cần hồ sơ hoặc chuyển về VN",
+        "Phát hiện điều khoản chia dữ liệu cho đối tác bảo hiểm vi phạm Luật 91/2025 (cấm cung cấp cho bảo hiểm khi chưa có yêu cầu bằng văn bản)",
+        "Phát hiện trường hiv_status hiển thị cho mọi người có quyền xem hồ sơ là vi phạm bảo mật thông tin HIV",
+        "Phát hiện thiếu thỏa thuận xử lý dữ liệu giữa vendor và phòng khám",
+        "Phát hiện vendor chưa có Giấy chứng nhận đủ điều kiện kinh doanh dịch vụ xử lý dữ liệu cá nhân (NĐ 356/2025)",
+        "Phát hiện thiếu liên thông dữ liệu lượt khám lên Sổ sức khỏe điện tử / VNeID",
+        "Các mục chưa đủ bằng chứng được gom thành danh sách câu hỏi gửi khách, không liệt kê từng mục checklist",
+        "Không trích văn bản đã hết hiệu lực như thể còn hiệu lực (TT 46/2018, NĐ 146/2018, NĐ 13/2023, TT 52/2017, TT 53/2017, NĐ 85/2016, TT 12/2022, TCVN 11930:2017, NĐ 117/2020, QĐ 4469)",
+        "Các nghĩa vụ chính có link tới văn bản (URL trỏ tới vanban.chinhphu.vn / datafiles.chinhphu.vn / congbao / moh.gov.vn / baohiemxahoi.gov.vn hoặc tương đương), không chỉ ghi số hiệu",
+        "Có mục riêng liệt kê điểm chưa rõ/cần xác minh, nói rõ nên hỏi ai"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "app-telemedicine-ai",
+      "prompt": "startup tao định làm app: đặt lịch khám + bác sĩ tư vấn video + chatbot AI gợi ý bệnh từ triệu chứng, dữ liệu để trên AWS Singapore cho rẻ. công ty tao chỉ là công ty phần mềm thôi. hỏi thật là có làm được không, cần giấy phép gì, có vướng luật gì không",
+      "expected_output": "Nêu: công ty phần mềm không tự cung cấp dịch vụ KCB từ xa (phải là cơ sở KCB có giấy phép và công bố đủ điều kiện, NĐ 96 Đ87); danh mục 50 bệnh được chữa từ xa (TT 30/2023); chatbot AI không thuộc danh mục rủi ro cao nhưng nghĩa vụ theo Luật AI (thông báo, minh bạch) và mốc; dữ liệu sức khỏe nhạy cảm, lưu ở Singapore là chuyển dữ liệu ra nước ngoài phải lập hồ sơ, yêu cầu lưu trữ trong nước theo luật ANM; giấy chứng nhận dịch vụ xử lý dữ liệu cá nhân; cấp độ 3; có căn cứ và phân biệt chắc chắn/suy luận.",
+      "files": [],
+      "assertions": [
+        "Nêu rõ công ty phần mềm không tự cung cấp dịch vụ khám chữa bệnh từ xa; phải là hoặc hợp tác với cơ sở KCB có giấy phép",
+        "Nêu cơ sở KCB phải công bố đủ điều kiện khám chữa bệnh từ xa theo NĐ 96/2023 Điều 87",
+        "Nêu giới hạn danh mục bệnh được chữa bệnh từ xa (TT 30/2023/TT-BYT)",
+        "Nêu dữ liệu sức khỏe là dữ liệu cá nhân nhạy cảm theo Luật 91/2025/QH15",
+        "Nêu lưu dữ liệu ở AWS Singapore là chuyển dữ liệu cá nhân ra nước ngoài, phải lập hồ sơ đánh giá",
+        "Không diễn giải NĐ 333/2026 thành 'mọi doanh nghiệp phải lưu dữ liệu người dùng 24 tháng' (24 tháng tính từ khi nhận yêu cầu)",
+        "Nêu chatbot gợi ý bệnh không nằm trong danh mục AI rủi ro cao theo QĐ 33/2026 và nêu nghĩa vụ theo Luật AI 134/2025/QH15",
+        "Nêu nghĩa vụ Giấy chứng nhận đủ điều kiện kinh doanh dịch vụ xử lý dữ liệu cá nhân (NĐ 356/2025) cho công ty vận hành nền tảng",
+        "Không trích văn bản đã hết hiệu lực như thể còn hiệu lực (NĐ 13/2023, NĐ 52/2013 kể cả thủ tục đăng ký Bộ Công Thương theo NĐ 52, Luật An toàn thông tin mạng 2015, NĐ 85/2016)",
+        "Các nghĩa vụ chính có link tới văn bản (URL trỏ tới vanban.chinhphu.vn / datafiles.chinhphu.vn / congbao / moh.gov.vn / baohiemxahoi.gov.vn hoặc tương đương), không chỉ ghi số hiệu",
+        "Phần tóm tắt đầu bài không nói chắc hơn phần chi tiết: các ý có căn cứ chưa rõ (BẮT BUỘC?/suy luận/dự thảo) được ghi rõ là chưa chắc ngay trong tóm tắt",
+        "Có mục riêng liệt kê điểm chưa rõ/cần xác minh, nói rõ nên hỏi ai"
+      ]
+    }
+  ]
+}

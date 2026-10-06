@@ -1,0 +1,14 @@
+{
+  "name": "vn-healthcare",
+  "owner": {
+    "name": "nguyen2887"
+  },
+  "plugins": [
+    {
+      "name": "vn-healthcare",
+      "source": "./",
+      "description": "Kim chỉ nam pháp lý Việt Nam cho phần mềm y tế: luật/thông tư hiện hành có link, tính năng bắt buộc, pattern thiết kế, checklist audit."
+    }
+  ],
+  "description": "Skill tuân thủ pháp luật Việt Nam cho phần mềm y tế (HIS/EMR/CIS/LIS/PACS/nhà thuốc/khám từ xa)."
+}
