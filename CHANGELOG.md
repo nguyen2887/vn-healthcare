@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.2.0 — 2026-10-27
+
+Chuyển trọng tâm từ "auditor pháp lý" sang **BA nghiệp vụ + tuân thủ**. Phần luật giữ nguyên (15 domain, 457 yêu cầu, ảnh chụp 2026-10-06).
+
+- Thêm `references/business/variation-points.md`: ba nhãn `[LUẬT]`/`[THÔNG LỆ]`/`[HỎI]`, bảng điểm biến thiên `VP-*` cho luồng ngoại trú (tiếp đón, khám, CLS, kê đơn, viện phí–BHYT, giấy tờ, danh mục–vận hành), bảng "đặc thù khách xin mà thực ra lệch luật".
+- Thêm luồng tham chiếu `references/business/flows/`: `ngoai-tru.md`, `cls.md`, `ke-don-cap-phat.md`, `vien-phi-bhyt.md`, `giay-to.md`.
+- Thêm `references/elicitation/`: `questions-by-role.md` (câu hỏi theo vai, câu bẫy, tài liệu cần xin), `khao-sat.md` (chuẩn bị, ghi chú, tổng hợp, điều kiện kết thúc).
+- Thêm `references/deliverables/templates.md`: báo cáo khảo sát, as-is/to-be, gap analysis 3 chiều, user story + AC + truy vết, bảng VP bàn giao thiết kế, UAT, change request, bảng giả định.
+- SKILL.md viết lại: persona BA; chế độ KHẢO SÁT / MÔ HÌNH LUỒNG / GAP (gồm audit cũ) / ĐẶC TẢ / HỎI ĐÁP; nguyên tắc nghiệp vụ (nhãn, hỏi trước khi khẳng định, không bịa quy trình, nói thẳng khi khách xin lệch luật). Chế độ THIẾT KẾ cũ gộp vào ĐẶC TẢ và không ra schema nữa — thiết kế phần mềm tách sang skill khác; mục "Pattern thiết kế" trong domain giữ làm tư liệu.
+- Evals: thêm 3 bài BA và ghi chú khảo sát mẫu `evals/files/khao-sat-sample/ghi-chu.md`.
+- `scripts/check_ids.py` quét cả thư mục con của `references/`.
+- Phạm vi: ngoại trú. Nội trú (BV) là đợt sau.
+
 ## 0.1.3 — 2026-10-06
 
 - Audit nhiều lượt: người gộp tự kiểm file kết quả của từng lượt thay vì chỉ chờ thông báo hoàn tất.

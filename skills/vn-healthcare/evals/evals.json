@@ -74,6 +74,71 @@
         "Phần tóm tắt đầu bài không nói chắc hơn phần chi tiết: các ý có căn cứ chưa rõ (BẮT BUỘC?/suy luận/dự thảo) được ghi rõ là chưa chắc ngay trong tóm tắt",
         "Có mục riêng liệt kê điểm chưa rõ/cần xác minh, nói rõ nên hỏi ai"
       ]
+    },
+    {
+      "id": 4,
+      "name": "khao-sat-chuan-bi",
+      "prompt": "tuần sau tao đi khảo sát một phòng khám đa khoa tư có BHYT, có xét nghiệm với siêu âm tại chỗ, có quầy thuốc. được gặp lễ tân, 1 bác sĩ, kế toán, chủ phòng khám, mỗi người tầm 30 phút. soạn giúp kịch bản và bộ câu hỏi, cái gì cần xin tài liệu trước thì ghi luôn",
+      "expected_output": "Kịch bản theo thứ tự gặp và thời lượng; bộ câu hỏi theo 4 vai đã lọc cho PK-BHYT, có câu bẫy (ai nhập hộ khi bác sĩ bận, sửa đơn thế nào, gửi XML lúc nào), câu gắn điểm luật quan trọng (tra thẻ, kết thúc lượt, ký số, Sổ SKĐT cho lượt dịch vụ, đồng ý dữ liệu); danh sách tài liệu xin trước (bảng giá, danh mục dịch vụ/thuốc, mẫu phiếu đang in, hợp đồng BHYT và kết quả xếp cấp, báo cáo gửi Sở); hướng dẫn ghi chú để tổng hợp sau.",
+      "files": [],
+      "assertions": [
+        "Chia câu hỏi theo từng vai (lễ tân, bác sĩ, kế toán/BHYT, chủ) thay vì một danh sách chung",
+        "Có câu hỏi về việc ai nhập liệu thay bác sĩ khi bận hoặc dùng chung tài khoản, diễn đạt gián tiếp (câu bẫy)",
+        "Có câu hỏi về thời điểm gửi XML lên Cổng giám định (ngay sau lượt hay gom cuối ngày/tháng)",
+        "Có câu hỏi về cách bác sĩ ký phiếu/đơn (chữ ký số hay ký tay/ảnh chữ ký)",
+        "Có câu hỏi về lượt khám dịch vụ có gửi Sổ sức khỏe điện tử không",
+        "Có câu hỏi về cách lấy đồng ý xử lý dữ liệu cá nhân của người bệnh",
+        "Có danh sách tài liệu xin trước gồm ít nhất bảng giá, danh mục dịch vụ, mẫu phiếu đang in",
+        "Có hướng dẫn cách ghi chú (theo bước luồng, nguyên văn, ảnh mẫu in, số lượng/tần suất)",
+        "Không khẳng định phòng khám này làm gì; mọi mặc định nêu ra được ghi là thông lệ hoặc cần hỏi",
+        "Gọn, đọc được trong khoảng 10 phút, không liệt kê ID nội bộ của skill trong câu hỏi"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "khao-sat-tong-hop-as-is",
+      "prompt": "tao vừa khảo sát xong, ghi chú ở evals/files/khao-sat-sample/ghi-chu.md. dựng giúp luồng as-is của phòng khám này, chỉ ra chỗ nào đang sai luật, chỗ nào tao còn thiếu thông tin phải hỏi tiếp",
+      "expected_output": "Luồng as-is theo bước (tiếp đón → tra thẻ → khám → CLS → đơn → quầy thuốc → thu tiền/hóa đơn → XML) với vai, công cụ, đau; bảng điểm biến thiên đã điền (trả lời / chưa xác nhận); lệch luật có ID và link: tài khoản dùng chung, ảnh chữ ký thay ký số, sửa đơn đã kê thay vì kê đơn mới, XML gửi cuối tháng, photo CCCD, không có đồng ý DLCN, chẩn đoán không mã ICD, giấy nghỉ quá số ngày hợp lý không kiểm soát, lượt dịch vụ không gửi Sổ SKĐT, không hóa đơn tổng hợp cuối ngày, trẻ em không có cơ chế gộp hồ sơ; câu hỏi còn thiếu cho dược sĩ, KTV, kế toán; giả định ghi rõ chưa xác nhận; trả lời câu hỏi của chủ về bệnh án điện tử phòng khám là BẮT BUỘC? với căn cứ.",
+      "files": [
+        "evals/files/khao-sat-sample/ghi-chu.md"
+      ],
+      "assertions": [
+        "Dựng được luồng as-is theo bước với vai và công cụ hiện tại, bám ghi chú chứ không bám luồng chuẩn",
+        "Phát hiện tài khoản dùng chung ở quầy và điều dưỡng dùng tài khoản bác sĩ là lệch luật, có căn cứ",
+        "Phát hiện ảnh chữ ký scan in sẵn không thay được chữ ký số, có căn cứ",
+        "Phát hiện sửa đơn đã kê để đổi thuốc là lệch luật; đề xuất kê đơn mới thay thế hoặc quy trình thay thế thuốc tại quầy theo đúng quy định",
+        "Phát hiện gửi XML cuối tháng là lệch luật (phải gửi ngay sau khi kết thúc lượt), có căn cứ",
+        "Phát hiện lượt dịch vụ không gửi Sổ sức khỏe điện tử là lệch luật, có căn cứ",
+        "Phát hiện photo CCCD và không có đồng ý xử lý dữ liệu cá nhân là vấn đề, có căn cứ",
+        "Phát hiện chẩn đoán để trống mã ICD-10 là lệch luật",
+        "Phát hiện thiếu hóa đơn tổng hợp cuối ngày cho phiếu thu không lấy hóa đơn, có căn cứ",
+        "Trả lời câu hỏi về bệnh án điện tử phòng khám trước 31/12/2026 là chưa chắc (BẮT BUỘC?) với hai cách đọc, không nói chắc theo một chiều",
+        "Có bảng/danh sách giả định ghi rõ 'chưa xác nhận' cho điểm ghi chú không nói (vd quy trình kho thuốc, dược sĩ, KTV)",
+        "Có danh sách câu hỏi còn thiếu theo vai chưa gặp (dược sĩ, KTV xét nghiệm, kế toán)",
+        "Không bịa quy trình phòng khám ngoài ghi chú; không khẳng định 'phòng khám thường làm X' mà không ghi là thông lệ",
+        "Các lệch luật chính có link văn bản"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "gap-luong-khach-vs-phan-mem",
+      "prompt": "phần mềm CIS của bên tao hiện có: tiếp đón tìm theo SĐT/CCCD, tra thẻ BHYT qua API cổng, hàng đợi theo phòng, phiếu khám + đơn thuốc ký số bằng token, gửi đơn QG và XML ngay sau khi thu ngân đóng lượt, hóa đơn điện tử nối Viettel, quầy thuốc có kho lô/hạn. chưa có: ký số từ xa, gói trả trước, giấy nghỉ BHXH, liên thông Sổ SKĐT cho lượt dịch vụ, hóa đơn tổng hợp cuối ngày. khách mới là phòng khám trong evals/files/khao-sat-sample/ghi-chu.md. làm gap analysis để tao biết cái gì cấu hình được, cái gì phải code, cái gì bảo khách đổi quy trình",
+      "expected_output": "Bảng gap theo điểm biến thiên: khách cần gì ↔ phần mềm có gì ↔ hướng xử lý (cấu hình / sửa phần mềm / đổi quy trình khách) với khuyến nghị; đổi quy trình khách chỉ với điểm thông lệ/đặc thù (thu tiền trước, hàng đợi, nhập hộ chuyển sang tài khoản riêng), không bao giờ để lách luật; việc phải code: Sổ SKĐT lượt dịch vụ, hóa đơn tổng hợp, giấy nghỉ BHXH, ký số từ xa (vì bác sĩ không chịu token), gói trả trước, gộp hồ sơ trẻ em; cấu hình: bảng giá, mã khoa, cấp CMKT, danh mục; điểm chưa xác nhận giữ nguyên trạng thái; bảng VP bàn giao đội thiết kế.",
+      "files": [
+        "evals/files/khao-sat-sample/ghi-chu.md"
+      ],
+      "assertions": [
+        "Mỗi gap được xếp vào một trong ba hướng: cấu hình / sửa phần mềm / đổi quy trình khách, kèm khuyến nghị",
+        "Không đề xuất khách 'đổi quy trình' để tránh một nghĩa vụ luật (vd không đề xuất bỏ gửi Sổ SKĐT cho lượt dịch vụ, không chấp nhận ảnh chữ ký)",
+        "Xác định liên thông Sổ SKĐT cho lượt dịch vụ, hóa đơn tổng hợp cuối ngày, giấy nghỉ BHXH là việc phải code vì luật bắt buộc và phần mềm chưa có",
+        "Xác định bảng giá, cấp CMKT/điểm, mã khoa, danh mục là việc cấu hình và nêu dữ liệu cần xin thêm từ khách (danh mục thuốc, kết quả thầu, điểm xếp cấp)",
+        "Đề xuất ký số từ xa như hướng xử lý cho bác sĩ không chịu dùng token, không hạ chuẩn xuống ảnh chữ ký",
+        "Đề xuất quy trình thay thế thuốc tại quầy / kê đơn mới thay cho thói quen sửa đơn, có căn cứ",
+        "Phân biệt điểm đã xác nhận và điểm chưa xác nhận từ khảo sát; không coi giả định là đã chốt",
+        "Có bảng điểm biến thiên bàn giao cho đội thiết kế (điểm, lớp, câu trả lời khách, trạng thái)",
+        "Không đi vào thiết kế kỹ thuật (schema, kiến trúc multi-tenant)",
+        "Các nghĩa vụ luật viện dẫn có link văn bản"
+      ]
     }
   ]
 }

@@ -38,7 +38,8 @@ def main() -> int:
             print(f"[TRÙNG] {ident} được định nghĩa {n} lần")
             problems += 1
 
-    searched = files + [ROOT / "SKILL.md"] + sorted((ROOT / "references").glob("*.md"))
+    searched = files + [ROOT / "SKILL.md"] + sorted(
+        f for f in (ROOT / "references").rglob("*.md") if f.parent != DOMAINS)
     for f in searched:
         for lineno, line in enumerate(f.read_text(encoding="utf-8").splitlines(), 1):
             for code, kind, start, end in REF.findall(line):

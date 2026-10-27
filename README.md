@@ -1,14 +1,30 @@
 # vn-healthcare
 
-Skill cho Claude (Claude Code, Claude Agent SDK, claude.ai) giúp làm **phần mềm y tế đúng pháp luật Việt Nam**: HIS, EMR/bệnh án điện tử, CIS/phần mềm phòng khám, LIS, RIS/PACS, nhà thuốc, khám chữa bệnh từ xa, app sức khỏe, AI y tế.
+Skill cho Claude (Claude Code, Claude Agent SDK, claude.ai) đóng vai **Business Analyst phần mềm y tế tại Việt Nam**: nắm nghiệp vụ của viện và phòng khám, nắm pháp luật đang áp dụng, và không bịa. Áp dụng cho HIS, EMR/bệnh án điện tử, CIS/phần mềm phòng khám, LIS, RIS/PACS, nhà thuốc, khám chữa bệnh từ xa, app sức khỏe, AI y tế.
 
-Với mỗi nghĩa vụ, skill cho biết: văn bản nào (số hiệu, điều/khoản, link bản gốc), áp dụng cho ai, hạn chót, mức độ chắc chắn, phần mềm phải làm gì, pattern thiết kế hệ thống/CSDL để đáp ứng, và cách audit phần mềm có sẵn.
+Hai mặt của skill:
+
+- **Nghiệp vụ (BA)**: soạn kịch bản và câu hỏi khảo sát theo vai; tổng hợp ghi chú phỏng vấn thành luồng as-is; so luồng của khách với luồng tham chiếu, với luật và với phần mềm hiện có (gap analysis); phân lớp mọi điểm khác biệt thành `[LUẬT]` / `[THÔNG LỆ]` / `[HỎI]`; viết user story có truy vết điều luật, kịch bản UAT, change request. Đợt hiện tại phủ **ngoại trú** (phòng khám, khoa khám bệnh), có và không có BHYT; nội trú chưa làm.
+- **Tuân thủ**: với mỗi nghĩa vụ pháp lý, skill cho biết văn bản nào (số hiệu, điều/khoản, link bản gốc), áp dụng cho ai, hạn chót, mức độ chắc chắn, phần mềm phải làm gì, và cách audit phần mềm có sẵn.
+
+Skill này **không thiết kế phần mềm** (kiến trúc, multi-tenant, schema). Đầu ra của nó là *cái gì* phải có và *cái gì* được phép khác giữa các khách hàng — đội thiết kế nhận bảng đó để quyết định *làm sao*.
 
 > **Ảnh chụp pháp luật tại 2026-10-06.** Văn bản y tế số ở Việt Nam thay đổi rất nhanh. Đây là tài liệu kỹ thuật tham khảo, **không phải tư vấn pháp lý**. Kết luận có hậu quả tiền bạc/pháp lý cần xác minh lại trạng thái văn bản và hỏi luật sư hoặc cơ quan quản lý.
 
-*English: a Claude skill that maps current Vietnamese law (Ministry of Health circulars, decrees, social health insurance rules, personal data and cybersecurity law) to concrete requirements, design patterns and audit checklists for healthcare software. Content is in Vietnamese. Snapshot as of 2026-10-06; not legal advice.*
+*English: a Claude skill that acts as a business analyst for Vietnamese healthcare software — clinic/hospital workflow discovery, as-is/to-be modelling, gap analysis against reference workflows and current law, requirements with legal traceability — on top of a map of current Vietnamese regulation (MOH circulars, decrees, social health insurance rules, personal data and cybersecurity law). Content is in Vietnamese. Snapshot as of 2026-10-06; not legal advice.*
 
 ## Có gì bên trong
+
+**Nghiệp vụ và BA** (`skills/vn-healthcare/references/`):
+
+| File | Nội dung |
+|---|---|
+| `business/variation-points.md` | Ba nhãn `[LUẬT]`/`[THÔNG LỆ]`/`[HỎI]`; bảng điểm biến thiên giữa các cơ sở theo luồng ngoại trú, mỗi điểm có lớp, căn cứ, câu hỏi khảo sát; bảng "đặc thù khách xin mà thực ra lệch luật" |
+| `business/flows/` | Luồng tham chiếu: ngoại trú, cận lâm sàng, kê đơn–cấp phát, viện phí–BHYT, giấy tờ. Mỗi bước: vai, ràng buộc luật, thông lệ, câu hỏi, dấu hiệu lệch chuẩn |
+| `elicitation/` | Bộ câu hỏi theo vai (tiếp đón, bác sĩ, điều dưỡng, CLS, dược, thu ngân, kế toán BHYT, chủ cơ sở, IT), câu bẫy, tài liệu cần xin; quy trình khảo sát và cách tổng hợp ghi chú |
+| `deliverables/templates.md` | Mẫu báo cáo khảo sát, as-is/to-be, gap analysis 3 chiều, user story + AC + truy vết, bảng bàn giao đội thiết kế, UAT, change request |
+
+**Pháp luật**:
 
 - **15 domain, 457 yêu cầu pháp lý**, mỗi yêu cầu có ID ổn định, căn cứ điều khoản, mức `BẮT BUỘC` / `BẮT BUỘC?` (có căn cứ nhưng phạm vi chưa rõ) / `NÊN`, kèm pattern thiết kế và checklist audit:
 
@@ -57,7 +73,8 @@ Skill tự kích hoạt khi bạn hỏi về phần mềm y tế tại Việt Na
 - Research từ đầu trên nguồn chính thống (vanban.chinhphu.vn, datafiles.chinhphu.vn, congbao.chinhphu.vn, moh.gov.vn, baohiemxahoi.gov.vn…), 2 pha: khảo sát độc lập 3 góc → đào sâu 15 cụm. Tài liệu research gốc nằm trong `research/`.
 - Mọi link được kiểm tra bằng `scripts/check_links.py` (mở được và trang chứa đúng số hiệu văn bản); bản hiện tại 318/328 link OK, phần còn lại là bài báo về dự thảo hoặc file quá lớn đã kiểm tay.
 - Câu trích từ bản scan OCR mất dấu chỉ được diễn giải, không trích nguyên văn, trừ khi đã đối chiếu bản có dấu.
-- Đánh giá trên 4 bài test (thiết kế, audit schema mẫu, audit codebase EMR thật, câu hỏi app khám từ xa + AI): có skill đạt 100% tiêu chí, không có skill 49% — khác biệt chủ yếu ở việc không trích văn bản đã hết hiệu lực, đúng thời hạn/mốc, và có link nguồn.
+- Phần pháp luật đánh giá trên 4 bài test (thiết kế, audit schema mẫu, audit codebase EMR thật, câu hỏi app khám từ xa + AI): có skill đạt 100% tiêu chí, không có skill 49% — khác biệt chủ yếu ở việc không trích văn bản đã hết hiệu lực, đúng thời hạn/mốc, và có link nguồn. Phần BA có 3 bài test (chuẩn bị khảo sát, tổng hợp as-is từ ghi chú mẫu, gap luồng khách ↔ phần mềm) trong `evals/`, chưa chạy đo.
+- Phần nghiệp vụ `[THÔNG LỆ]` không có nguồn chính thống như luật: lấy từ kinh nghiệm triển khai và hướng dẫn ngành, luôn ghi nhãn và luôn phải xác nhận lại với khách.
 
 ## Cập nhật
 
