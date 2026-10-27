@@ -3,7 +3,7 @@
 > Người ghi: NganNgocChau · Vai: BA · Trạng thái: cần xác minh luật
 
 ## Thấy gì
-Đối chiếu tài liệu đặc tả "BHYT 03. Tiếp đón người bệnh có BHYT theo lượt" (file `BHYT 03.docx`; 24 quy tắc R-TD-01…24, 15 ca KT-TD-01…15, mục 8 hiện trạng code ngày 26/10/2026) với `references/domains/bhyt-gd.md`, `bhyt-data.md`, `tc-ms.md`, `chuyenkhoa.md`, `skdt.md` (kiểm tra lần cuối 2026-10-06).
+Đối chiếu tài liệu đặc tả "BHYT 03. Tiếp đón người bệnh có BHYT theo lượt" (file `BHYT 03.docx`; 24 quy tắc R-TD-01…24, 15 ca KT-TD-01…15) với `references/domains/bhyt-gd.md`, `bhyt-data.md`, `tc-ms.md`, `chuyenkhoa.md`, `skdt.md` (kiểm tra lần cuối 2026-10-06).
 
 Phần khớp skill: lý do đến KCB thuộc lượt; hạn phiếu chuyển 10 ngày làm việc / 01 năm bệnh PL III / còn giá trị đến hết đợt (BHYT-GD-R11); xuất trình thẻ muộn tách khoản trước–sau, cấp cứu xuất trình trước khi kết thúc đợt (R06); cấp cứu không bắt giấy tờ, nhận người vô danh (SKDT-R10); 7 nhóm ưu tiên Luật KCB Đ3 k2 (CHUYENKHOA-R39); cấp cứu không check-in XML0 (BHYT-DATA-R03); thẻ hết hạn khi đang điều trị tối đa 15 ngày (R08).
 
@@ -17,7 +17,7 @@ Tài liệu này dùng chung cơ chế tra thẻ với BHYT 02, nên lặp lại
 | A2 | R-TD-13, KT-TD-09: Cổng lỗi phải có lý do và ảnh màn hình mới tạo lượt | NĐ 188 Đ38 k2: ghi nhận mã thẻ, vẫn tiếp nhận, tra lại sau; ảnh màn hình chỉ gửi kèm khi kết thúc lượt vẫn lỗi. Bắt ảnh lúc tiếp nhận là thêm thủ tục (Đ38 k3; NĐ 90 Đ95 k1 a) | BHYT-GD-R03, R04 |
 | A3 | R-TD-15: trẻ < 6 tuổi dùng giấy chứng sinh, không qua Cổng | NĐ 188 Đ50 k1 a: tra mã thẻ tạm trên Cổng; chưa có thì nhập thông tin để Cổng cấp tự động | BHYT-GD-R05 |
 | A4 | R-TD-11: mã đối tượng KCB suy ngay tại quầy, chỉ tính lại khi đổi lý do đến/giấy tờ/chẩn đoán | QĐ 3276 PL1 ghi chú: mã xác định sau khi kết thúc khám/điều trị; mã ở XML0 là tạm, mã cuối ở XML1 → bắt buộc tính lại khi đóng lượt | BHYT-DATA-R16 |
-| A5 | R-TD-07: cấp cứu không check-in XML0, căn cứ ghi QĐ 3176 | Nội dung đúng, căn cứ đúng là QĐ 4750 Đ2 k2 (`MA_DOITUONG_KCB = 2`). QĐ 4750 diễn giải `MA_THE_BHYT`: cấp cứu tra thẻ trước khi ra viện → khớp với điểm lệch code ở mục 8 (lượt cấp cứu có thẻ vẫn bị buộc tra Cổng khi tạo lượt) | BHYT-DATA-R03, R04 |
+| A5 | R-TD-07: cấp cứu không check-in XML0, căn cứ ghi QĐ 3176 | Nội dung đúng, căn cứ đúng là QĐ 4750 Đ2 k2 (`MA_DOITUONG_KCB = 2`). QĐ 4750 diễn giải `MA_THE_BHYT`: cấp cứu tra thẻ trước khi ra viện, không buộc tra Cổng khi tạo lượt | BHYT-DATA-R03, R04 |
 
 ### B. Đặc tả thiếu nghĩa vụ đã có ID trong skill
 
@@ -35,7 +35,6 @@ Tài liệu này dùng chung cơ chế tra thẻ với BHYT 02, nên lặp lại
 
 ### C. Quy tắc nội bộ đang ghi như luật
 - R-TD-23 (không nhận lượt mới khi đang nội trú chưa ra viện): căn cứ là quy tắc cũ R-TN-08 của dự án, không phải văn bản → nên gắn `[THÔNG LỆ]`/`[HỎI]`.
-- Mục 8 ghi danh mục cơ sở KCB chỉ nạp 1.571 bệnh viện/TTYT nên giấy chuyển từ trạm y tế, phòng khám bị chặn: lỗi cấu hình dữ liệu, cần nạp đủ danh mục mã cơ sở 5 ký tự của BHXH (QĐ 384/2019; BHYT-DATA mục mã cơ sở).
 
 ## Ở đâu
 Tài liệu đặc tả nghiệp vụ nội bộ của dự án HIS (bản tải từ artifact "BA Bảo hiểm y tế – HIS-PROMAX") · Loại cơ sở: bệnh viện có chi nhánh, khoa khám bệnh và cấp cứu · Tỉnh: không rõ · Có BHYT.
