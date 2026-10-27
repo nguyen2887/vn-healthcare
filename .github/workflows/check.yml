@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - name: ID yêu cầu và dẫn chiếu
@@ -31,7 +32,7 @@ jobs:
       - name: Contributor không đụng vùng chủ repo (chỉ PR)
         if: github.event_name == 'pull_request' && github.actor != 'nguyen2887'
         run: |
-          git fetch origin ${{ github.base_ref }} --depth=1
+          git fetch origin ${{ github.base_ref }}
           changed=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
           echo "$changed"
           if echo "$changed" | grep -E '^(skills/vn-healthcare/references/domains/|skills/vn-healthcare/references/(supersession|timeline)\.md|skills/vn-healthcare/SKILL\.md|scripts/|\.claude/|\.github/)'; then
