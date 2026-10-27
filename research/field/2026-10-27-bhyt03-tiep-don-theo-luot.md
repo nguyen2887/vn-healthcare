@@ -37,7 +37,7 @@ Tài liệu này dùng chung cơ chế tra thẻ với BHYT 02, nên lặp lại
 - R-TD-23 (không nhận lượt mới khi đang nội trú chưa ra viện): căn cứ là quy tắc cũ R-TN-08 của dự án, không phải văn bản → nên gắn `[THÔNG LỆ]`/`[HỎI]`.
 
 ## Ở đâu
-Tài liệu đặc tả nghiệp vụ nội bộ của dự án HIS (bản tải từ artifact "BA Bảo hiểm y tế – HIS-PROMAX") · Loại cơ sở: bệnh viện có chi nhánh, khoa khám bệnh và cấp cứu · Tỉnh: không rõ · Có BHYT.
+Tài liệu đặc tả nghiệp vụ nội bộ của một dự án HIS (không nêu tên) · Loại cơ sở: bệnh viện có chi nhánh, khoa khám bệnh và cấp cứu · Tỉnh: không rõ · Có BHYT.
 
 ## Bằng chứng
 - Tài liệu `BHYT 03.docx` (không đưa vào repo; dữ liệu kiểm thử trong đó là dữ liệu giả).
