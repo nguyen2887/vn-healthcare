@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.1 — 2026-10-27
+
+- Chế độ ĐÓNG GÓP: `references/contributing.md`, `CONTRIBUTING.md`, hộp thư `research/field/` với mẫu 5 ô.
+- Hook Claude Code trong repo: SessionStart phân vai chủ/contributor theo file `.owner` (gitignore); PreToolUse chặn mềm commit/push lên main khi là contributor.
+- CODEOWNERS và CI: kiểm ID, VP-id, evals.json; chặn PR của người không phải chủ repo đụng vùng luật/SKILL/scripts.
+
 ## 0.2.0 — 2026-10-27
 
 Chuyển trọng tâm từ "auditor pháp lý" sang **BA nghiệp vụ + tuân thủ**. Phần luật giữ nguyên (15 domain, 457 yêu cầu, ảnh chụp 2026-10-06).

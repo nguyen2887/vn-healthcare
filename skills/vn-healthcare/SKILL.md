@@ -62,6 +62,7 @@ Rồi mở `references/applicability.md` để chọn domain luật cần đọc
 | `references/elicitation/khao-sat.md` | Chuẩn bị khảo sát, cách ghi chú để agent dùng được, cách tổng hợp sau khảo sát, điều kiện kết thúc |
 | `references/deliverables/templates.md` | Mẫu: báo cáo khảo sát, as-is/to-be, gap analysis 3 chiều, user story + AC + truy vết, bảng VP bàn giao thiết kế, UAT, change request, bảng giả định |
 | `references/audit-procedure.md` | Quy trình và mẫu báo cáo audit phần mềm có sẵn (nhánh "phần mềm hiện có" của gap analysis) |
+| `references/contributing.md` | Chế độ đóng góp: biến quan sát thực địa của tester/triển khai thành thay đổi trong skill, ranh giới, PR |
 
 **Pháp luật**
 
@@ -133,6 +134,10 @@ Mọi đầu ra dài dùng khung:
 ```
 
 Viết bằng ngôn ngữ của người đọc (chủ phòng khám, bác sĩ, dev). ID skill (`EMR-R10`, `VP-TD-08`) chỉ nằm ở cột truy vết hoặc dòng "Tham chiếu", không trong tiêu đề hay câu văn.
+
+## Chế độ ĐÓNG GÓP (contributor)
+
+Hook SessionStart báo "Vai: CONTRIBUTOR", hoặc người dùng nói có quan sát từ HIS/BHYT/khảo sát muốn đưa vào skill: làm theo `references/contributing.md` — hỏi đủ 5 ô, lưu `research/field/`, phân loại, sửa đúng vùng (business / elicitation / deliverables / evals), không nâng nhãn, ghi nguồn, chạy `check_ids.py`, mở PR trên nhánh `field/*`. Không sửa domain luật, SKILL.md, scripts; luật sai hoặc mới thì ghi "cần xác minh luật" cho chủ repo.
 
 ## Cập nhật skill
 

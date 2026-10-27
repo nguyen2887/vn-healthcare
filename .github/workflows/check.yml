@@ -1,0 +1,39 @@
+name: check
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  ids:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: ID yêu cầu và dẫn chiếu
+        run: python3 skills/vn-healthcare/scripts/check_ids.py
+      - name: evals.json hợp lệ
+        run: python3 -c "import json; json.load(open('skills/vn-healthcare/evals/evals.json'))"
+      - name: VP-id dẫn chiếu tồn tại
+        run: |
+          python3 - <<'PY'
+          import re, pathlib, sys
+          root = pathlib.Path('skills/vn-healthcare')
+          vp = (root/'references/business/variation-points.md').read_text()
+          defined = set(re.findall(r'^\| (VP-[A-Z]+-\d{2}) \|', vp, re.M))
+          bad = set()
+          for f in list((root/'references').rglob('*.md')) + [root/'SKILL.md']:
+              for m in re.findall(r'\bVP-[A-Z]+-\d{2}\b', f.read_text()):
+                  if m not in defined: bad.add((m, str(f)))
+          for b in sorted(bad): print('[KHÔNG TỒN TẠI]', *b)
+          sys.exit(1 if bad else 0)
+          PY
+      - name: Contributor không đụng vùng chủ repo (chỉ PR)
+        if: github.event_name == 'pull_request' && github.actor != 'nguyen2887'
+        run: |
+          git fetch origin ${{ github.base_ref }} --depth=1
+          changed=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
+          echo "$changed"
+          if echo "$changed" | grep -E '^(skills/vn-healthcare/references/domains/|skills/vn-healthcare/references/(supersession|timeline)\.md|skills/vn-healthcare/SKILL\.md|scripts/|\.claude/|\.github/)'; then
+            echo "::error::PR của contributor đụng vùng cần chủ repo. Tách ra hoặc ghi vào research/field/ dạng 'cần xác minh'."; exit 1
+          fi

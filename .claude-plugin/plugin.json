@@ -1,7 +1,7 @@
 {
   "name": "vn-healthcare",
   "description": "BA nghiệp vụ và tuân thủ pháp luật cho phần mềm y tế Việt Nam (HIS, EMR, CIS, LIS, PACS, nhà thuốc, khám từ xa, AI): khảo sát viện/phòng khám, luồng as-is/to-be, gap analysis, user story có truy vết luật; luật/thông tư hiện hành có link, checklist audit.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": {
     "name": "nguyen2887"
   },

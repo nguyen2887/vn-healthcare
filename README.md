@@ -90,7 +90,7 @@ python3 skills/vn-healthcare/scripts/check_ids.py
 
 rồi đổi ngày "Kiểm tra lần cuối" và ghi `CHANGELOG.md`.
 
-Góp ý, báo sai, văn bản mới: mở issue hoặc pull request, kèm số hiệu và link văn bản gốc.
+Góp ý, báo sai, văn bản mới: mở issue hoặc pull request, kèm số hiệu và link văn bản gốc. Người có trải nghiệm thực địa (tester, triển khai, BA) xem `CONTRIBUTING.md`: kể quan sát cho agent, agent tự đưa vào skill và mở PR; chủ repo duyệt nhãn và nguồn.
 
 ## Giấy phép
 
