@@ -26,7 +26,7 @@ Skill này **không thiết kế phần mềm** (kiến trúc, multi-tenant, sch
 
 **Pháp luật**:
 
-- **15 domain, 457 yêu cầu pháp lý**, mỗi yêu cầu có ID ổn định, căn cứ điều khoản, mức `BẮT BUỘC` / `BẮT BUỘC?` (có căn cứ nhưng phạm vi chưa rõ) / `NÊN`, kèm pattern thiết kế và checklist audit:
+- **15 domain, 458 yêu cầu pháp lý**, mỗi yêu cầu có ID ổn định, căn cứ điều khoản, mức `BẮT BUỘC` / `BẮT BUỘC?` (có căn cứ nhưng phạm vi chưa rõ) / `NÊN`, kèm pattern thiết kế và checklist audit:
 
 | Domain | Nội dung |
 |---|---|

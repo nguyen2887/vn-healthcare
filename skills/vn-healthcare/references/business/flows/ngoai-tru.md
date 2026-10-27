@@ -57,7 +57,7 @@ Bước thu tiền **không có vị trí cố định** trên sơ đồ: đó l
 - **Đầu vào → ra**: mã thẻ/số định danh → phản hồi Cổng (hạn thẻ, nơi đăng ký, mức hưởng, lũy kế cùng chi trả, lịch sử KCB), loại đối tượng KCB, phiếu chuyển/hẹn nếu có.
 - `[LUẬT]`:
   - Tra cứu thẻ trên Cổng khi tiếp đón, lưu nguyên phản hồi gắn lượt (`BHYT-GD-R02`, `BHYT-DATA-R04`); dự phòng khi Cổng/VNeID lỗi (`BHYT-GD-R03`).
-  - Mức hưởng theo cấp CMKT và đúng/không đúng nơi đăng ký, cấp cứu 100%, các diện miễn cùng chi trả (`BHYT-GD-R10`, `R09`); mã hóa `MUC_HUONG` (`BHYT-DATA-R11`).
+  - Mức hưởng theo cấp CMKT và đúng/không đúng nơi đăng ký, cấp cứu được hưởng đủ mức hưởng của thẻ ở mọi cơ sở (không phải 100% chi phí), các diện miễn cùng chi trả (`BHYT-GD-R10`, `R09`); mã hóa `MUC_HUONG` (`BHYT-DATA-R11`).
   - Tiếp nhận phiếu chuyển cơ sở còn hạn, phiếu hẹn khám lại dùng một lần (`BHYT-GD-R11`, `R12`).
   - Xuất trình thẻ muộn, cấp cứu (`BHYT-GD-R06`).
   - Hiển thị lịch sử KCB cho bác sĩ (`BHYT-GD-R02`).

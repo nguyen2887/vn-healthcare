@@ -1,6 +1,6 @@
 # TC-MS — Hóa đơn, giá dịch vụ, thanh toán, bảo hiểm thương mại, mua sắm và thuê dịch vụ công nghệ số
 
-> Kiểm tra lần cuối: 2026-10-06 · Áp dụng: BV công (ĐVSNCL, dùng NSNN), BV tư, phòng khám, nhà thuốc, đơn vị y tế công có thu phí/lệ phí, nền tảng đặt khám, vendor HIS/POS/HĐĐT/SaaS · Research gốc: `research/deep/TC-MS.md`
+> Kiểm tra lần cuối: 2026-10-27 · Áp dụng: BV công (ĐVSNCL, dùng NSNN), BV tư, phòng khám, nhà thuốc, đơn vị y tế công có thu phí/lệ phí, nền tảng đặt khám, vendor HIS/POS/HĐĐT/SaaS · Research gốc: `research/deep/TC-MS.md`
 
 Phạm vi: hóa đơn điện tử, chứng từ điện tử (NĐ 254/2026, TT 91/2026-BTC); chế tài hóa đơn (NĐ 125/2020 sửa bởi NĐ 310/2025); giá dịch vụ KCB và minh bạch chi phí; thanh toán không tiền mặt và ranh giới giấy phép trung gian thanh toán (NĐ 52/2024); bảo hiểm sức khỏe thương mại; NQ 261/2025; đầu tư, mua sắm, thuê dịch vụ công nghệ số bằng NSNN (Luật 148/2025, NĐ 224/2026, TT 39 và 41/2026-BKHCN, TT 34/2025-BKHCN). Không lặp: niêm yết giá trên HTTT (HTTT-BC-R11), bảng kê 01/KBCB (BHYT-DATA-R21), hóa đơn BHYT gắn biên bản quyết toán (BHYT-GD-R26), thông báo trước chi phí ngoài phạm vi BHYT (BHYT-GD-R35), mức hưởng theo cấp CMKT (BHYT-GD-R10), cấm chia dữ liệu cho bảo hiểm thương mại (DLCN-R09), hợp đồng thuê dịch vụ theo NĐ 331 (ANM-R22, R23).
 
@@ -164,7 +164,7 @@ Văn bản được dẫn nhưng chưa đọc gốc: TT 15/2024/TT-NHNN (sửa b
 - **Áp dụng**: mọi cơ sở KCB · **Hiệu lực/hạn**: đang áp dụng
 - **Mức**: BẮT BUỘC
 - **Phần mềm phải**: mỗi dòng giá có `price_category` (4 loại), `legal_source` (QĐ BYT / NQ HĐND / QĐ cơ sở), `effective_from/to`, mã DVKT; không cài sẵn "bảng giá thống nhất toàn quốc"; áp giá theo ngày thực hiện; phiên bản bất biến; liên kết HTTT-BC-R11.
-- **Bẫy**: cài sẵn bảng giá TT 22/2023 là dùng văn bản hết HL. Quy tắc áp giá khi giá đổi giữa đợt điều trị: chưa xác minh văn bản hiện hành.
+- **Bẫy**: cài sẵn bảng giá TT 22/2023 là dùng văn bản hết HL. Nhưng quy tắc 30% từ lần khám thứ 2 và định mức 65 lượt/bàn khám không mất theo TT 22: căn cứ hiện hành là TT 35/2016 Đ4b sửa bởi TT 39/2024 (`BHYT-GD-R36`). Quy tắc áp giá khi giá đổi giữa đợt điều trị: chưa xác minh văn bản hiện hành.
 
 ### TC-MS-R18 — Giá theo yêu cầu, phần chênh lệch; cơ sở tư nhân có BHYT
 - **Căn cứ**: NĐ 96 Đ119 k7 c (dịch vụ theo yêu cầu: quỹ trả phần trong phạm vi hưởng, người bệnh trả chênh lệch), k8 (cơ sở tư nhân BHYT được thanh toán theo giá do HĐND tỉnh phê duyệt cho cơ sở nhà nước trên địa bàn; chênh lệch người bệnh tự trả), k7 a–b. TT 21/2024 Đ10.

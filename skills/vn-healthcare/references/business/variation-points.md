@@ -56,7 +56,7 @@ ID: `VP-<luồng>-<số>`. Luồng: `TD` tiếp đón, `KH` khám, `CLS` cận l
 | VP-KH-07 | Phân quyền xem hồ sơ giữa phòng/khoa; phá kính | `[LUẬT]` `BẮT BUỘC?` · `[HỎI]` mức chặt | `EMR-R11`, `DLCN-R01` | Bác sĩ phòng A có cần xem hồ sơ phòng B? Khi nào? | BV, CHUỖI |
 | VP-KH-08 | Ký điện tử của bác sĩ: token, ký từ xa, HSM; ký từng phiếu hay ký khi đóng lượt | `[LUẬT]` phải là chữ ký số/điện tử hợp pháp, ảnh chữ ký không được · `[HỎI]` phương thức và thời điểm | `EMR-R06`, `R07`, `DUOC-R11` | Bác sĩ có chứng thư số chưa? Loại gì? Chấp nhận ký theo lô cuối buổi? | tất cả |
 | VP-KH-09 | Xác nhận của người bệnh (đồng ý thủ thuật, cam kết) | `[LUẬT]` | `EMR-R09`, `CHUYENKHOA-R11` | Người bệnh ký bằng gì? Có lưu bằng chứng? | PK chuyên khoa, BV |
-| VP-KH-10 | Khám nhiều chuyên khoa trong một lượt; khám lại trong ngày | `[THÔNG LỆ]` · `[HỎI]` tính một lượt hay nhiều, thu tiền khám thế nào | `BHYT-DATA-R21` (tỷ lệ tiền khám 100/30/10/0) | Người bệnh khám 2–3 phòng/ngày thì tính sao? BHYT có hợp nhất lượt? | BV, PK đa khoa |
+| VP-KH-10 | Khám nhiều chuyên khoa trong một lượt; khám lại trong ngày | `[LUẬT]` cách tính tiền khám BHYT: lần 1 = 100%, lần 2–4 = 30%, lần 5 = 10%, từ lần 6 = 0%; khám lại trong ngày tính lần 2+, cấp cứu tính lần mới · `[HỎI]` cách tổ chức phòng khám, thu tiền khám người không có thẻ | `BHYT-GD-R36`, `BHYT-DATA-R21` | Người bệnh khám 2–3 phòng/ngày thì tính sao? BHYT có hợp nhất lượt? | BV, PK đa khoa |
 | VP-KH-11 | Dịch vụ theo yêu cầu / ngoài phạm vi BHYT: thông báo trước và ghi nhận | `[LUẬT]` | `BHYT-GD-R35`, `TC-MS-R18` | Hiện ai báo giá chênh lệch cho người bệnh? Lưu ở đâu? | PK-BHYT, BV |
 
 ### Cận lâm sàng
