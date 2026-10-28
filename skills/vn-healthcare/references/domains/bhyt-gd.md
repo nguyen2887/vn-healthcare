@@ -1,6 +1,6 @@
 # BHYT-GD — Giám định, thanh toán và quy trình dữ liệu BHYT
 
-> Kiểm tra lần cuối: 2026-10-27 · Áp dụng: BV công, BV tư, phòng khám có hợp đồng KCB BHYT; cơ sở/phòng xét nghiệm nhận chuyển DVCLS; vendor HIS · Research gốc: `research/deep/BHYT-GD.md`
+> Kiểm tra lần cuối: 2026-10-28 · Áp dụng: BV công, BV tư, phòng khám có hợp đồng KCB BHYT; cơ sở/phòng xét nghiệm nhận chuyển DVCLS; vendor HIS · Research gốc: `research/deep/BHYT-GD.md`
 
 Không phải ý kiến pháp lý. Phạm vi: tiếp đón và tra cứu thẻ, mức hưởng, chuyển cơ sở, phiếu hẹn, chuyển DVCLS, tài khoản Cổng, ký số/xác thực, thời hạn gửi, phản hồi Cổng, giám định tự động/chủ động, tổng hợp và quyết toán, xử phạt. Chuẩn XML, bộ mã, bảng kê 697 → **BHYT-DATA**. Liên thông CLS chi tiết → **CLS**. Hóa đơn → **TC-MS**. VNeID, Sổ SKĐT → **SKDT**. HSBA, ký số chung → **EMR**.
 
@@ -55,6 +55,15 @@ Không phải ý kiến pháp lý. Phạm vi: tiếp đón và tra cứu thẻ, 
 | BHYT-GD-R34 | Chuẩn bị cho dự thảo thay TT 48 (03 giờ) |
 | BHYT-GD-R35 | Chi phí ngoài phạm vi phải thông báo trước |
 | BHYT-GD-R36 | Tiền khám nhiều chuyên khoa và định mức lượt khám/bàn khám |
+| BHYT-GD-R37 | Chi phí một lần KCB thấp |
+| BHYT-GD-R38 | Trần gói thiết bị y tế 45 tháng lương cơ sở, stent phủ thuốc |
+| BHYT-GD-R39 | Lương cơ sở (mức tham chiếu) theo giai đoạn |
+| BHYT-GD-R40 | Quyền lợi nhóm quân đội, công an, cơ yếu, dân quân thường trực |
+| BHYT-GD-R41 | Ngày giường điều trị nội trú, giường lưu |
+| BHYT-GD-R42 | Nhiều can thiệp trong một lần phẫu thuật, DVKT dừng giữa chừng |
+| BHYT-GD-R43 | Vận chuyển người bệnh |
+| BHYT-GD-R44 | Máu, chế phẩm máu, vận chuyển máu |
+| BHYT-GD-R45 | Kháng sinh dấu (*) chỉ được quỹ trả khi kê đúng quy trình |
 
 ## 1. Văn bản
 
@@ -68,7 +77,13 @@ Không phải ý kiến pháp lý. Phạm vi: tiếp đón và tra cứu thẻ, 
 | 90/2026/NĐ-CP (30/03/2026) | Xử phạt VPHC y tế (mục BHYT Đ81–95); thay NĐ 117/2020 | 15/05/2026 | Còn HL | gốc-OCR (Đ95 k4 đã đối chiếu ảnh trang, xem GIAYTO) | [VB 217386](https://vanban.chinhphu.vn/?pageid=27160&docid=217386) · [PDF](https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/4/90-ndcp.signed.pdf) |
 | 01/2025/TT-BYT | Hướng dẫn Luật BHYT (lưu trú, chuyển người bệnh, phiếu hẹn, phiếu chuyển) | 01/01/2025 | Còn HL; sửa bởi TT 06/2026 Đ5 k2 | gốc | [PDF](https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/01/01-byt.pdf) |
 | 35/2016/TT-BYT (28/09/2016), sửa bởi 39/2024/TT-BYT (17/11/2024) | Danh mục, tỷ lệ, điều kiện thanh toán DVKT BHYT; TT 39 Đ1 k4 bổ sung Đ4a–4d: tiền khám nhiều chuyên khoa, định mức 65 lượt/bàn khám | TT 39: 01/01/2025 | Còn HL; TT 39 sửa, không thay TT 35 | gốc (TT 39, ký số) | [VB 211771](https://vanban.chinhphu.vn/?pageid=27160&docid=211771) · [PDF TT 39](https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/11/39-byt.pdf) |
-| 15/2023/QH15 (VBHN 26/VBHN-VPQH, 26/02/2026) | Luật KCB: Đ7 k2 (cấm từ chối, cố ý chậm cấp cứu), Đ40 (trường hợp được từ chối) | 01/01/2024 | Còn HL | gốc | [PDF VBHN](https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/26-vbhn-vpqh.pdf) |
+| 161/2026/NĐ-CP (15/05/2026) | Lương cơ sở 2.530.000 đ/tháng (Đ3 k2); thay NĐ 73/2024 (Đ6) | 01/07/2026 | Còn HL | gốc-ảnh | [VB 218107](https://vanban.chinhphu.vn/?pageid=27160&docid=218107) · [PDF](https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/5/161-ndcp.signed.pdf) |
+| 2275/BHXH-CSYT (30/06/2026) | Mức hưởng BHYT theo LCS mới: chi phí thấp, trần TBYT, lũy kế; chi phí thấp ở cơ sở 50% | 01/07/2026 | Hướng dẫn BHXH | gốc | [PDF, BHXH VN](https://baohiemxahoi.gov.vn/content/tintuc/Lists/News/Attachments/26762/CV%202275.pdf) |
+| 04/2017/TT-BYT sửa bởi 24/2025/TT-BYT (30/06/2025); VBHN 14/VBHN-BYT | Danh mục, tỷ lệ, điều kiện thanh toán TBYT; Đ3 k2 b, c: trần gói 45 tháng LCS, stent phủ thuốc | TT 24: 01/09/2025 | Còn HL; căn cứ cũ NĐ 146 | gốc | [VB 214383](https://vanban.chinhphu.vn/?pageid=27160&docid=214383) · [PDF TT 24](https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/24-byt.pdf) · [VBHN 14](https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/8/14-vbhn-byt.pdf) |
+| 70/2015/NĐ-CP sửa bởi 74/2025/NĐ-CP | BHYT quân đội, công an, cơ yếu: không áp tỷ lệ, mức thanh toán; chi phí ngoài phạm vi | NĐ 74: 01/07/2025 | Còn HL (NĐ 188 Đ15 k2 dẫn) | NĐ 74: gốc-ảnh; NĐ 70: thứ cấp | [VB 213303](https://vanban.chinhphu.vn/?pageid=27160&docid=213303) · [PDF NĐ 74](https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/4/74-2025-nd-cp-1-.signed.pdf) |
+| 15/2023/TT-BYT | Giá, thanh toán máu, chế phẩm máu; vận chuyển máu ≤ 17.000 đ/đơn vị | 15/09/2023 | Còn HL; bảng giá Đ3 bị QĐ 3833/QĐ-BYT (2024) thay (thứ cấp) | gốc-ảnh | [PDF](https://datafiles.chinhphu.vn/cpp/files/vbpq/2023/7/15-byt.pdf) |
+| 37/2024/TT-BYT | Thanh toán thuốc BHYT; Đ10 k5 kháng sinh (*) | hiện hành | Còn HL | gốc-ảnh | [PDF](https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/11/37-byt.pdf) |
+| 15/2023/QH15 (VBHN 26/VBHN-VPQH, 26/02/2026) | Luật KCB: Đ7 k2 (cấm từ chối, cố ý chậm cấp cứu), Đ40 (trường hợp được từ chối), Đ77 k2 (giường lưu) | 01/01/2024 | Còn HL | gốc | [PDF VBHN](https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/26-vbhn-vpqh.pdf) |
 | 06/2026/TT-BYT (02/04/2026) | ICD-10; Đ5 k2 sửa mẫu phiếu TT 01 (ký số thay đóng dấu) | 01/07/2026; Đ5 k2, k3 từ 01/06/2026 | Còn HL | gốc | [PDF](https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/4/06-byt.pdf) |
 | 164/2025/NĐ-CP | GDĐT lĩnh vực BHXH, CSDL quốc gia về bảo hiểm | 01/07/2025 | Còn HL; NĐ 43/2021 hết HL | gốc-OCR | [PDF](https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/164-cp.signed.pdf) |
 | 09/2026/TT-BTC (03/02/2026) | Tạo lập, sử dụng sổ BHXH, thẻ BHYT bản điện tử; Đ6 k3 không đòi thẻ giấy, cơ sở phải tra giá trị thẻ; Đ8 k2 thẻ trên VssID cấp trước đó vẫn có giá trị như bản giấy | 03/02/2026 (Đ9 k1) | Còn HL; không áp cho đối tượng BQP, BCA quản lý (Đ1 k1 b) | gốc-ảnh (bản sao y ký số BHXH VN; không có trên vanban.chinhphu.vn) | [VB BHXH ItemID 4992](https://baohiemxahoi.gov.vn/vanban/Pages/default.aspx?ItemID=4992) · [PDF](https://baohiemxahoi.gov.vn:4545/File_Server_BHXH/documents/N409.pdf) |
@@ -210,7 +225,7 @@ Dự thảo TT BTC về Cổng tiếp nhận dữ liệu (hướng dẫn NĐ 188
 - **Áp dụng**: mọi cơ sở KCB BHYT · **Hiệu lực/hạn**: 01/01/2026 (đã qua)
 - **Mức**: BẮT BUỘC
 - **Phần mềm phải**: ký số tổ chức từng hồ sơ XML trước khi gửi; quản lý chứng thư (hạn, cảnh báo trước 30 ngày, đăng ký chứng thư mới lên Cổng); xác minh chữ ký trước khi gửi; lưu bản đã ký đúng như đã gửi (bất biến, có hash).
-- **Bẫy**: "xác thực dữ liệu" là ký số hồ sơ chi phí, không phải xác thực sinh trắc người bệnh (căn cứ: TT 12 Đ9 k1 dẫn ngược Đ69 k9). TT 48 Đ6 k3 cho dữ liệu "phục vụ quản lý" không cần xác thực, nhưng hướng dẫn BHXH yêu cầu ký cả XML0 — nên ký mọi thứ.
+- **Bẫy**: "xác thực dữ liệu" là ký số hồ sơ chi phí, không phải xác thực sinh trắc người bệnh (căn cứ: TT 12 Đ9 k1 dẫn ngược Đ69 k9). TT 48 Đ6 k3 cho dữ liệu "phục vụ quản lý" không cần xác thực, nhưng hướng dẫn BHXH yêu cầu ký cả XML0 — nên ký mọi thứ. Đặc tả ghi "bắt buộc ký từ 01/12/2024 theo CV 3700/BHXH-CNTT" là sai căn cứ: CV 3700 là đề nghị BHXH gửi BYT (dẫn QĐ 2733, thí điểm Sổ SKĐT), BYT trả lời bằng CV 7506/BYT-BH đòi lộ trình; mốc ràng buộc là NĐ 188 Đ69 k9 (01/01/2026).
 
 ### BHYT-GD-R19 — Gửi dữ liệu sau mỗi lượt (đang có hiệu lực)
 - **Căn cứ**: TT 48 Đ6 k1 (gửi "ngay sau khi kết thúc lần khám bệnh hoặc kết thúc đợt điều trị ngoại trú hoặc kết thúc đợt điều trị nội trú", trừ Đ8); Đ13 k7 (kết thúc vào ngày nghỉ, lễ, Tết thì gửi ngày làm việc kế tiếp), k8 (gửi dữ liệu thanh toán cùng lúc dữ liệu quản lý); Đ5 (4 phương thức, kết quả như nhau). NĐ 188 Đ35 k2 c.
@@ -255,7 +270,7 @@ Dự thảo TT BTC về Cổng tiếp nhận dữ liệu (hướng dẫn NĐ 188
 - **Áp dụng**: mọi cơ sở KCB BHYT · **Hiệu lực/hạn**: 01/BH từ 01/04/2026; quyết toán quý I/2026 dùng mẫu cũ (TT 12 Đ17 k2)
 - **Mức**: BẮT BUỘC
 - **Phần mềm phải**: sinh 01/BH, 02/BH từ đúng tập XML1 đã gửi (không nhập tay); kiểm ràng buộc cột trước khi ký; ký số người lập, kế toán trưởng, thủ trưởng; nhắc hạn ngày 15.
-- **Bẫy**: Mẫu 01/BH dẫn `MA_LOAI_KCB` theo PL1 QĐ 824/2023 (bị QĐ 1804 bỏ từ 01/08/2026) → dùng QĐ 1804 theo TT 12 Đ17 k3 (BHYT-DATA-R14).
+- **Bẫy**: Mẫu 01/BH dẫn `MA_LOAI_KCB` theo PL1 QĐ 824/2023 (bị QĐ 1804 bỏ từ 01/08/2026) → dùng QĐ 1804 theo TT 12 Đ17 k3 (BHYT-DATA-R14). QĐ 1804 có thêm mã 10–16 mà 4 nhóm I–IV chưa có chỗ; chưa có hướng dẫn xếp nhóm (rà đến 10/2026). Hồ sơ 01/BH gửi Cổng là danh sách từng hồ sơ có `MA_LOAI_KCB` (Tài liệu kỹ thuật TT 12) → giữ mã gốc, không tự tạo nhóm "Khác"; mẫu in xếp theo bản chất khám/điều trị (suy luận), hỏi BHXH tỉnh.
 
 ### BHYT-GD-R26 — Biên bản giám định, quyết toán, hóa đơn
 - **Căn cứ**: TT 12 Đ12 k2 (02 ngày làm việc ký, gửi lại Biên bản giám định 03/BH; không đồng ý ghi rõ căn cứ); Đ14 k3 (02 ngày làm việc gửi Biên bản quyết toán 06/BH đã ký và hóa đơn điện tử khớp số quyết toán, hoàn trả tạm ứng thừa), k6 (chênh lệch thì lập hóa đơn điện tử mới cho phần chênh); Đ15 k1 (BHXH thanh toán trong 03 ngày làm việc). NĐ 188 Đ51 k2 (từ chối phải nêu căn cứ, lý do, số tiền), k3.
@@ -320,6 +335,7 @@ Dự thảo TT BTC về Cổng tiếp nhận dữ liệu (hướng dẫn NĐ 188
 - **Áp dụng**: BV, PK có dịch vụ theo yêu cầu · **Hiệu lực/hạn**: 15/08/2025
 - **Mức**: BẮT BUỘC
 - **Phần mềm phải**: khi chỉ định dịch vụ theo yêu cầu/ngoài danh mục cho người có thẻ, hiển thị và ghi nhận xác nhận đã thông báo (người bệnh ký); tách đúng `T_BNTT` với `T_BNCCT`.
+- **Bẫy**: nhóm quân đội, công an, cơ yếu (Luật Đ12 k3 a–đ) không tự trả chi phí ngoài phạm vi trong giới hạn NĐ 70/2015 Đ10 k2 (sửa bởi NĐ 74/2025), xem `BHYT-GD-R40`.
 
 ### BHYT-GD-R36 — Tiền khám nhiều chuyên khoa và định mức lượt khám/bàn khám
 - **Căn cứ**: TT 35/2016 Đ4b (bổ sung bởi TT 39/2024 Đ1 k4): k1 vào nội trú qua khoa khám bệnh thì tính tiền khám theo k3, vào thẳng khoa lâm sàng không đăng ký khám thì không thanh toán tiền khám; k2 khám chuyên khoa tại khoa lâm sàng tính như khám tại khoa khám bệnh; k3 trong cùng một lần đến khám (có thể sang ngày tiếp theo) "từ lần khám thứ 02 chỉ tính 30% mức giá của 01 lần khám bệnh", tổng không quá 02 lần giá một lần khám; k4 khám lại trong ngày do bất thường là lần thứ 02 trở đi, trừ cấp cứu tính lần mới; k5 bàn khám trên **65 lượt/08 giờ** thì BHXH chỉ trả 50% giá khám từ lượt thứ 66, kéo dài tối đa 03 tháng liên tiếp thì không trả từ lượt 66 (giờ khám dài hơn thì quy đổi, ví dụ 10 giờ = 81 lượt). Đ4d k7 (quy tắc k5 chỉ áp giữa BHXH và cơ sở, **không** dùng để tính cùng chi trả của người bệnh), k8 (thiên tai, thảm họa, dịch bệnh có thông báo: trả theo thực tế). PL QĐ 697 Phần Một IV.3 quy ra tỷ lệ theo dịch vụ: lần 1 = 100%, lần 2–4 = 30%, lần 5 = 10%, từ lần 6 = 0%. TT 39 Đ2 k4: lượt trước 01/01/2025 áp văn bản cũ.
@@ -328,7 +344,69 @@ Dự thảo TT BTC về Cổng tiếp nhận dữ liệu (hướng dẫn NĐ 188
 - **Phần mềm phải**: đánh số thứ tự lần khám trong một lần đến khám (kể cả kéo sang ngày sau) và áp tỷ lệ theo dịch vụ ở cột 6 bảng kê (`BHYT-DATA-R21`); khám lại trong ngày tính lần 2+, cấp cứu tính lần mới; đếm lượt theo bàn khám và giờ tổ chức khám thực tế, cảnh báo trước ngưỡng; phần giảm do vượt định mức tách khỏi tiền cùng chi trả của người bệnh; cờ thời kỳ thiên tai, dịch để tắt quy tắc định mức.
 - **Bẫy**: TT 22/2023 hết HL nhưng định mức 65 lượt và quy tắc 30% **vẫn còn**, căn cứ là TT 35 Đ4b (TT 39). Viết tắt "100/30/10/0" là sai, lần 3 và 4 vẫn 30%.
 
-**Tổng**: 36 yêu cầu. BẮT BUỘC 32 (R01–R13, R15, R17–R26, R28–R33, R35, R36); BẮT BUỘC? 2 (R14; R16 phần yêu cầu phần mềm); NÊN 2 (R27 phần công cụ phần mềm; R34 dự thảo).
+### BHYT-GD-R37 — Chi phí một lần KCB thấp
+- **Căn cứ**: Luật 51 Đ1 k17 (Đ22 k1 b: 100% khi chi phí một lần KCB thấp hơn mức Chính phủ quy định); NĐ 188 Đ17 k1 (thấp hơn **15% mức lương cơ sở**), k2 (áp cả cho các trường hợp Luật Đ22 k3, k4, k5); CV 2275/BHXH-CSYT (30/06/2026) mục 1, 2: ở cơ sở có tỷ lệ theo nơi KCB dưới 100% (mã 1.13, 1.14, 1.18 = 50%), lượt có tổng chi dưới 15% LCS thì quỹ trả tổng chi × tỷ lệ nơi KCB, không phải 100%.
+- **Áp dụng**: mọi cơ sở KCB BHYT · **Hiệu lực/hạn**: 15/08/2025; ngưỡng đổi theo LCS (`BHYT-GD-R39`)
+- **Mức**: BẮT BUỘC
+- **Phần mềm phải**: so tổng chi BHYT của lượt với 0,15 × LCS theo ngày (so sánh chặt, dưới ngưỡng); dưới ngưỡng thì mức hưởng theo đối tượng = 100% nhưng **vẫn nhân** tỷ lệ theo nơi KCB; ghi ngưỡng đã dùng vào ảnh chụp kết quả tính.
+- **Bẫy**: "chi phí thấp thì quỹ trả 100%" là sai ở cơ sở hưởng 50%/40%. CV 6872/BYT-BH mà một số đặc tả dẫn không tìm thấy ở đâu; căn cứ là NĐ 188 Đ17 và CV 2275.
+
+### BHYT-GD-R38 — Trần gói thiết bị y tế 45 tháng lương cơ sở, stent phủ thuốc
+- **Căn cứ**: TT 04/2017 Đ3 k2 b, c sửa bởi TT 24/2025 Đ1 k3 a, b (HL 01/09/2025; VBHN 14/VBHN-BYT): mỗi lần sử dụng DVKT là một gói TBYT, quỹ trả tối đa **45 tháng LCS × mức hưởng**; stent động mạch vành phủ thuốc: stent thứ 2 trả ½ giá, tối đa 18.000.000 đ; thứ 3, 4 trả ⅓, tối đa 12.000.000 đ mỗi stent; từ thứ 5 không trả; stent 2–4 tính ngoài gói. PL QĐ 697 mục 11 (gói TBYT). NĐ 70/2015 Đ2, Đ11 sửa bởi NĐ 74/2025 Đ1 k2, k10: nhóm quân đội, công an, cơ yếu, dân quân thường trực "không áp dụng tỷ lệ, mức thanh toán" → không áp trần.
+- **Áp dụng**: cơ sở có DVKT dùng TBYT · **Hiệu lực/hạn**: 01/09/2025; trần đổi theo LCS (`BHYT-GD-R39`)
+- **Mức**: BẮT BUỘC · BẮT BUỘC? (miễn trần cho nhóm NĐ 188 Đ16: chỉ có ở PL QĐ 697 mục 11; NĐ 188 Đ16 chỉ miễn tỷ lệ, VBHN 14 không còn câu miễn trần của TT 04 bản gốc)
+- **Phần mềm phải**: gom TBYT theo từng lần DVKT thành gói; trần quỹ = 45 × LCS(ngày kết thúc DVKT) × mức hưởng; bỏ TBYT có tỷ lệ riêng ra khỏi tổng gói; quy tắc stent theo thứ tự; nhóm miễn trần cấu hình theo mã đối tượng, không hard-code; phần vượt trần chuyển người bệnh trả.
+- **Bẫy**: "TT 24/2025 Đ1 k1" (PL QĐ 697, nhiều đặc tả) là dẫn sai, đúng là Đ1 k3 a. "NĐ 70 Điều 2" là **NĐ 70/2015/NĐ-CP** (BHYT quân đội, công an, cơ yếu), không phải NĐ 70/2025 (hóa đơn, đã hết HL). Không còn "trần DVKT cao chi phí lớn" riêng trong luật hiện hành (Luật 51 viết lại Đ22 và bỏ cụm này).
+
+### BHYT-GD-R39 — Lương cơ sở (mức tham chiếu) theo giai đoạn
+- **Căn cứ**: Luật 51 Đ3 k5 b (mức tham chiếu tạm theo lương cơ sở đến khi Chính phủ quy định khác); NĐ 161/2026/NĐ-CP Đ3 k2 (LCS **2.530.000 đ/tháng từ 01/07/2026**), Đ6 (thay NĐ 73/2024, LCS 2.340.000 đ); NĐ 188 Đ17 k1, Đ18 k2 a, c (quy đổi lũy kế khi LCS đổi), Đ57 (ngoại trú lấy ngày KCB, nội trú lấy ngày ra viện để xác định mức thanh toán); CV 2275/BHXH-CSYT (30/06/2026).
+- **Áp dụng**: mọi cơ sở KCB BHYT · **Hiệu lực/hạn**: 2.340.000 đ đến 30/06/2026; 2.530.000 đ từ 01/07/2026
+- **Mức**: BẮT BUỘC (bảng tham số, Đ57, Đ18 k2 c) · BẮT BUỘC? (ngày chốt LCS cho chi phí thấp và trần TBYT của lượt vắt qua mốc)
+- **Phần mềm phải**: bảng `luong_co_so(tu_ngay, den_ngay, muc)`; mọi ngưỡng sinh từ bảng (0,15 × chi phí thấp; 6 × miễn cùng chi trả; 45 × trần gói TBYT); không hard-code số tiền. Lượt vắt qua mốc: chi phí thấp theo ngày kết thúc lượt/ra viện, trần TBYT theo ngày kết thúc từng DVKT (theo tiền lệ CV 3687/BYT-BH năm 2024, đọc qua CV 1311/BHXH Bình Định; năm 2026 chưa có văn bản chuyển tiếp, giữ cấu hình được và hỏi BHXH tỉnh).
+- **Bẫy**: quy tắc kiểu "LCS theo ngày ra viện cho mọi ngưỡng" lệch ít nhất với trần TBYT và lũy kế cùng chi trả (Đ18 k2 c có công thức quy đổi riêng).
+
+### BHYT-GD-R40 — Quyền lợi nhóm quân đội, công an, cơ yếu, dân quân thường trực
+- **Căn cứ**: Luật BHYT Đ22 k1 a (Luật 51 Đ1 k17), đối tượng Đ12 k3 a–đ; NĐ 70/2015 Đ2, Đ10 k2, Đ11 sửa bởi NĐ 74/2025 Đ1 k2, k9, k10 (100%; không áp tỷ lệ, mức thanh toán do BYT quy định; chi phí ngoài phạm vi được quỹ trả nếu là thuốc, hóa chất, TBYT được cấp phép lưu hành và DVKT được phê duyệt theo chỉ định chuyên môn, không thuộc Luật Đ23; tự đi không đúng nơi thì 100/50/40% theo Đ11 k3); NĐ 188 Đ15 k2.
+- **Áp dụng**: cơ sở KCB BHYT tiếp nhận nhóm này · **Hiệu lực/hạn**: 01/07/2025
+- **Mức**: BẮT BUỘC
+- **Phần mềm phải**: xác định nhóm theo mã đối tượng hoặc kết quả Cổng (không chỉ theo ký tự thẻ); không áp trần gói TBYT (`BHYT-GD-R38`); chi phí ngoài phạm vi đủ điều kiện NĐ 70 Đ10 k2 tính vào phần quỹ, không gán mặc định `T_BNTT`.
+- **Bẫy**: ký hiệu mức hưởng "5" trên thẻ chỉ có căn cứ ở QĐ 1351/QĐ-BHXH (thứ cấp); thẻ BQP, BCA có thể chưa có dữ liệu trên Cổng (mã 001, 002 — `BHYT-GD-R02`).
+
+### BHYT-GD-R41 — Ngày giường điều trị nội trú, giường lưu
+- **Căn cứ**: TT 35/2016 Đ4c (bổ sung bởi TT 39/2024 Đ1 k4): k1 số ngày = ngày ra − ngày vào, **+1** khi tử vong, nặng xin về, chuyển cơ sở, hoặc đã qua cấp cứu rồi chuyển nơi khác tiếp tục nội trú; trên 04 giờ đến dưới 24 giờ tính 01 ngày; từ 04 giờ trở xuống không tính tiền giường (cấp cứu vào thẳng không tính giường hồi sức); k2 hai khoa trong ngày mỗi khoa ½; từ ba khoa lấy trung bình khoa giá cao nhất và thấp nhất trong các khoa nằm trên 04 giờ; k3 giường ngoại khoa, bỏng tối đa 10 ngày sau phẫu thuật, chuyển viện thì nơi nhận được 10 trừ số ngày nơi chuyển (nơi chuyển ghi ngày phẫu thuật trên giấy chuyển); k4 ghép 02 người ½, 03 người ⅓; băng ca, giường gấp 50%; giường hồi sức tích cực phải đủ điều kiện. PL QĐ 697 mục 2.1–2.3 và mục (9). Giường lưu: Luật KCB Đ77 k2 (PKĐK tư nhân vùng khó khăn, biên giới, hải đảo; PKĐK khu vực; nhà hộ sinh; trạm y tế xã; tối đa 72 giờ trừ bất khả kháng); QĐ 2010 PL3 mã `TYT.1925`, `PKKV.1925`.
+- **Áp dụng**: cơ sở có điều trị nội trú, giường lưu · **Hiệu lực/hạn**: 01/01/2025 (TT 39 Đ2 k4: vào trước, ra sau mốc thì áp văn bản cũ)
+- **Mức**: BẮT BUỘC
+- **Phần mềm phải**: tính ngày giường theo giờ vào/ra từng khoa, không theo ngày lịch; cờ tử vong/nặng xin về/chuyển viện để +1; bộ đếm 10 ngày sau phẫu thuật mang theo giấy chuyển; hệ số ghép giường, băng ca; tách "tổng số ngày điều trị" (để in) khỏi "số ngày giường thanh toán"; giường lưu chỉ bật cho loại cơ sở Đ77 k2, cảnh báo quá 72 giờ. Hệ số giường điều trị ban ngày lấy từ văn bản giá đã duyệt của cơ sở, không hard-code.
+- **Bẫy**: TT 22/2023 hết HL nhưng quy tắc ngày giường **vẫn còn**, căn cứ là TT 35 Đ4c (TT 39). Hệ số 0,3 cho giường ban ngày không có trong thông tư nào, nó nằm trong văn bản giá của từng cơ sở (chưa đọc hết ảnh TT 21/2024 để loại trừ hẳn). Cách đếm ngày giường lưu PL 697 chỉ ghi "theo quy định của BYT", chưa thấy văn bản riêng (tạm áp Đ4c, suy luận).
+
+### BHYT-GD-R42 — Nhiều can thiệp trong một lần phẫu thuật, DVKT dừng giữa chừng
+- **Căn cứ**: TT 35/2016 Đ4d k2 (TT 39/2024 Đ1 k4): trả theo giá phẫu thuật phức tạp nhất, giá cao nhất; phẫu thuật phát sinh cùng kíp 50%, thay kíp 80%; thủ thuật phát sinh 80%; k11 giá phẫu thuật đã gồm gây mê/gây tê (trừ Mắt). PL QĐ 697 mục 7 (ghi ở cột tỷ lệ thanh toán theo dịch vụ). NĐ 188 Đ48: DVKT chỉ định nhưng không thể tiếp tục thì không kê DVKT, quỹ trả thuốc, TBYT, vật tư thực tế đã dùng.
+- **Áp dụng**: cơ sở có phẫu thuật, thủ thuật · **Hiệu lực/hạn**: 01/01/2025
+- **Mức**: BẮT BUỘC
+- **Phần mềm phải**: gắn DVKT vào một ca phẫu thuật; đánh dấu DVKT chính (100%) và DVKT phát sinh với cờ cùng kíp / thay kíp / thủ thuật (50/80/80%); cờ "DVKT dừng giữa chừng" bỏ dòng DVKT, giữ thuốc, vật tư thực tế.
+
+### BHYT-GD-R43 — Vận chuyển người bệnh
+- **Căn cứ**: Luật BHYT Đ21 k1 b (Luật 51 Đ1 k16): đối tượng Đ12 k3 a, b, c, d, đ, e, h, i, o, r khi đang nội trú hoặc cấp cứu phải chuyển cơ sở; NĐ 188 Đ14 k1–k5: có giá vận chuyển được duyệt thì theo giá (cơ sở tư nhân tham chiếu giá cơ sở nhà nước); chưa có giá thì theo km thực tế, **0,2 lít xăng/km**, giá xăng tại thời điểm chuyển ghi trên giấy chuyển, **không áp tỷ lệ, mức hưởng**; trả cả chiều đi và về cho nơi chuyển; nhiều người một xe tính như một người; người bệnh tự túc thì trả một chiều; Đ50 k2. PL QĐ 697 mục 12. QĐ 3276 PL2: mã nhiên liệu.
+- **Áp dụng**: cơ sở có chuyển người bệnh · **Hiệu lực/hạn**: 15/08/2025
+- **Mức**: BẮT BUỘC
+- **Phần mềm phải**: kiểm đối tượng và điều kiện (nội trú/cấp cứu + chuyển cơ sở); ba nhánh tính tiền (giá được duyệt, định mức xăng, tự túc); dòng vận chuyển không nhân mức hưởng; ghi giá xăng và km trên giấy chuyển.
+- **Bẫy**: PL QĐ 697 vẫn dẫn "Đ27 Luật BHYT", căn cứ phạm vi đúng là Đ21 k1 b.
+
+### BHYT-GD-R44 — Máu, chế phẩm máu, vận chuyển máu
+- **Căn cứ**: Luật BHYT Đ21 k2 đ (Luật 51); TT 35/2016 Đ4a k1 a (máu, chế phẩm máu tính ngoài giá ngày giường, theo thực tế), Đ4d k5, k12 (TT 39); TT 15/2023/TT-BYT Đ3 k10–11, Đ5 k1–2 (vận chuyển máu tối đa 17.000 đ/đơn vị; xét nghiệm NAT, kháng thể bất thường cộng vào giá đơn vị máu), Đ7 (HL 15/09/2023, thay TT 17/2020); PL QĐ 697 mục 8 (tỷ lệ theo dịch vụ 100%, tỷ lệ BHYT 100%). Giá tối đa đơn vị máu: QĐ 3833/QĐ-BYT (19/12/2024) thay bảng giá Đ3 TT 15 (thứ cấp, chưa có bản gốc).
+- **Áp dụng**: cơ sở có truyền máu · **Hiệu lực/hạn**: 15/09/2023
+- **Mức**: BẮT BUỘC
+- **Phần mềm phải**: kê máu theo đơn vị (mã PL9 QĐ 7603); giá không vượt giá tối đa; vận chuyển máu ≤ 17.000 đ/đơn vị; tách dòng máu khỏi giá giường.
+- **Bẫy**: QĐ 3176 và nhiều HIS còn dẫn TT 17/2020 (hết HL 15/09/2023).
+
+### BHYT-GD-R45 — Kháng sinh dấu (*) chỉ được quỹ trả khi kê đúng quy trình
+- **Căn cứ**: TT 37/2024/TT-BYT Đ10 k5: thuốc có dấu (*) phải hội chẩn trước khi dùng, trừ cấp cứu; kháng sinh (*) quỹ trả khi kê đúng quy trình quản lý sử dụng kháng sinh của BYT; QĐ 5631/QĐ-BYT (31/12/2020, tài liệu chuyên môn, chưa có văn bản thay) mục 4.2: duyệt trước khi dùng hoặc trong 24–48 giờ với cấp cứu/ngoài giờ; mỗi lần duyệt không quá 14 ngày; PL2 ngoại lệ khoa.
+- **Áp dụng**: cơ sở kê kháng sinh BHYT · **Hiệu lực/hạn**: TT 37/2024 hiện hành
+- **Mức**: BẮT BUỘC (điều kiện thanh toán) · NÊN (cách phần mềm chặn/cảnh báo)
+- **Phần mềm phải**: cờ thuốc (*) theo danh mục BHYT; phiếu yêu cầu/duyệt kháng sinh gắn đơn; cảnh báo hoặc chặn đưa vào hồ sơ thanh toán khi thiếu duyệt (trừ cấp cứu có duyệt bù); hạn 14 ngày mỗi lần duyệt.
+- **Bẫy**: QĐ 5631 chỉ có bản đăng lại (thứ cấp); danh mục thuốc BHYT mới dự kiến 2026 (chưa ban hành) có thể đổi danh sách (*).
+
+**Tổng**: 45 yêu cầu. BẮT BUỘC 41 (R01–R13, R15, R17–R26, R28–R33, R35–R45; R38, R39 có phần BẮT BUỘC?); BẮT BUỘC? 2 (R14; R16 phần yêu cầu phần mềm); NÊN 2 (R27 phần công cụ phần mềm; R34 dự thảo).
 
 ## 3. Pattern thiết kế
 
@@ -391,7 +469,7 @@ Dự thảo TT BTC về Cổng tiếp nhận dữ liệu (hướng dẫn NĐ 188
 | BHYT-GD-A05 | R05 | Ca sơ sinh chưa có thẻ: lấy/đề nghị mã thẻ tạm qua Cổng | Ảnh, XML có mã tạm | BẮT BUỘC |
 | BHYT-GD-A06 | R06 | Xuất trình thẻ ngày 2 đợt nội trú (không cấp cứu): chi phí ngày 1 có vào BHYT không | Bảng kê, XML2/XML3 theo ngày | BẮT BUỘC |
 | BHYT-GD-A07 | R07, R08 | Thẻ hết hạn giữa đợt: mức hưởng sau hạn + 15 ngày; đổi thẻ giữa đợt | XML1 `MUC_HUONG`, bảng kê | BẮT BUỘC |
-| BHYT-GD-A08 | R09 | Lũy kế gần ngưỡng: tự chuyển 100% khi vượt; lương cơ sở tham số hóa | Cấu hình, bảng kê | BẮT BUỘC |
+| BHYT-GD-A08 | R09, R39 | Lũy kế gần ngưỡng: tự chuyển 100% khi vượt; giá trị lương cơ sở lấy từ bảng theo ngày (2.340.000 đến 30/06/2026, 2.530.000 từ 01/07/2026) | Cấu hình, bảng kê | BẮT BUỘC |
 | BHYT-GD-A09 | R10 | Cấu hình cấp CMKT, điểm, cờ tuyến cũ; ca ngoại trú không đúng nơi đăng ký ở cơ sở thuộc NĐ 188 Đ19 k2–4 sau 01/07/2026 | Cấu hình, tỷ lệ, căn cứ in ra | BẮT BUỘC |
 | BHYT-GD-A10 | R11 | Phiếu chuyển điện tử: ký số bác sĩ và cơ sở (sau 01/06/2026); hạn 10 ngày làm việc/01 năm đúng; còn chữ "đóng dấu" không | File phiếu đã ký | BẮT BUỘC |
 | BHYT-GD-A11 | R12 | Dùng lại phiếu hẹn đã dùng; tạo phiếu hẹn thứ 2 cho đợt đã kết thúc — có bị chặn | Log, thông báo lỗi | BẮT BUỘC |
@@ -417,7 +495,11 @@ Dự thảo TT BTC về Cổng tiếp nhận dữ liệu (hướng dẫn NĐ 188
 | BHYT-GD-A31 | R34 | p95 thời gian kết thúc lượt → Cổng tiếp nhận; ký có cần thao tác tay; hồ sơ có khóa sau đề nghị thanh toán | Thống kê, mô tả luồng ký | NÊN |
 | BHYT-GD-A32 | R35 | Dịch vụ theo yêu cầu cho người có thẻ: phiếu thông báo trước có chữ ký; `T_BNTT` tách `T_BNCCT` | Phiếu, XML1 | BẮT BUỘC |
 | BHYT-GD-A33 | R36 | Lượt khám 4 chuyên khoa ra tỷ lệ 100/30/30/30; khám lại trong ngày tính lần 2; bàn khám lượt 66 trở đi: tiền cùng chi trả của người bệnh không đổi | Bảng kê, XML3 | BẮT BUỘC |
-
+| BHYT-GD-A34 | R37, R38, R39 | Lượt vào 28/06/2026, ra 03/07/2026, 2 DVKT dùng TBYT trước và sau 01/07: trần gói theo LCS của ngày kết thúc từng DVKT (× mức hưởng); chi phí thấp so với 15% LCS mới; lũy kế quy đổi theo NĐ 188 Đ18 k2 c; ở cơ sở 50% chi phí thấp vẫn nhân 50% | Bảng kê, cấu hình | BẮT BUỘC? |
+| BHYT-GD-A35 | R40 | Thẻ QN/CA: không áp trần gói TBYT; chi phí ngoài phạm vi đủ điều kiện vào phần quỹ | Bảng kê, XML1 | BẮT BUỘC |
+| BHYT-GD-A36 | R41 | Ca chuyển 3 khoa trong ngày; ca 3 giờ không tính giường; ca tử vong +1; ca chuyển viện sau mổ ngày 6 → nơi nhận tối đa 4 ngày giường ngoại | Bảng kê, XML3 | BẮT BUỘC |
+| BHYT-GD-A37 | R42, R43, R44 | Ca mổ có phẫu thuật phát sinh cùng kíp 50%, thay kíp 80%; dòng vận chuyển không nhân mức hưởng; máu tính ngoài giá giường, vận chuyển ≤ 17.000 đ/đơn vị | Bảng kê | BẮT BUỘC |
+| BHYT-GD-A38 | R45 | Kháng sinh (*) không có phiếu duyệt bị cảnh báo trước khi đưa vào hồ sơ thanh toán | Đơn thuốc, XML2 | BẮT BUỘC |
 ## 5. Mốc thời gian
 
 | Ngày | Sự kiện | Ai phải làm | Đã qua/sắp tới |
