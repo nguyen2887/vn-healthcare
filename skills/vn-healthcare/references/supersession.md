@@ -1,6 +1,6 @@
 # Chuỗi thay thế văn bản và bẫy trích dẫn
 
-> Kiểm tra lần cuối: 2026-10-27
+> Kiểm tra lần cuối: 2026-10-28
 
 Dùng file này TRƯỚC khi trích bất kỳ văn bản nào: nếu văn bản nằm ở cột "Cũ", phải trích văn bản ở cột "Mới".
 
@@ -47,12 +47,14 @@ Thứ tự: Luật/Pháp lệnh → Nghị định → Nghị quyết → Quyế
 | NĐ 13/2023/NĐ-CP (BVDLCN) | Luật 91/2025/QH15 + NĐ 356/2025/NĐ-CP | 01/01/2026 | Toàn bộ; đồng ý và hồ sơ đánh giá tác động đã nộp theo NĐ 13 vẫn dùng được | NĐ 356 Đ42 k2; Luật 91 Đ39 k1–2 | DLCN, HTTT-BC, GIAYTO, DUOC, EMR |
 | NĐ 47/2020/NĐ-CP | Sửa bởi NĐ 194/2025/NĐ-CP | 19/08/2025 | Một phần (một số điều bãi bỏ; Đ35 k3 sửa) | NĐ 194 Đ40 k2 b, k3 | HTTT-BC |
 | NĐ 47/2024/NĐ-CP (danh mục CSDLQG) | Bãi bỏ bởi NĐ 194/2025; danh mục nay là QĐ 11/2026/QĐ-TTg | 19/08/2025 | Toàn bộ | NĐ 194 Đ40 k2 a | HTTT-BC (HTTT-BC-R20) |
+| NĐ 73/2024/NĐ-CP (lương cơ sở 2.340.000 đ) | NĐ 161/2026/NĐ-CP (lương cơ sở 2.530.000 đ) | 01/07/2026 | Toàn bộ | NĐ 161 Đ6 k2 | BHYT-GD (BHYT-GD-R39) |
 | NĐ 42/2025/NĐ-CP (chức năng BYT) | NĐ 313/2026/NĐ-CP | 18/08/2026 | Toàn bộ; văn bản ký trước 18/08/2026 dẫn NĐ 42 vẫn đúng tại thời điểm ký | NĐ 313/2026 | CLS, SKDT |
 | NĐ 45/2026/NĐ-CP | NĐ 224/2026/NĐ-CP | 01/07/2026 | Toàn bộ, trừ dự án chuyển tiếp | NĐ 224 Đ90 k2, Đ91 | TC-MS |
 | NĐ 165/2025/NĐ-CP Đ16 k2 | NĐ 356/2025 Đ42 k3 (đảo ngược nội dung) | 01/01/2026 | Một khoản | NĐ 356 Đ42 k3 | DLCN |
 | NĐ 169/2025/NĐ-CP | Sửa bởi NĐ 347/2026/NĐ-CP | 15/09/2026 | Một phần (ngoại vi) | NĐ 347/2026 | DLCN |
 | NĐ 23/2025/NĐ-CP | Sửa bởi NĐ 15/2026/NĐ-CP; trích theo VBHN 17/2026/VBHN-NĐ-BKHCN (07/09/2026) | 14/01/2026 | Một phần | NĐ 15/2026 | BAOMAT-CB (BAOMAT-CB-R26) |
 | NQ 04/2025/NQ-CP | NĐ 45/2026/NĐ-CP (sau đó NĐ 224/2026) | 01/03/2026 | Toàn bộ | NĐ 45 Đ41 | TC-MS |
+| QĐ 124/2004/QĐ-TTg (mã đơn vị hành chính) | QĐ 19/2025/QĐ-TTg | 01/07/2025 | Toàn bộ | QĐ 19/2025 Đ5 k2 | BHYT-DATA (QĐ 3176 STT 14 còn dẫn QĐ 124) |
 | QĐ 06/QĐ-TTg (Đề án 06 giai đoạn 2022–2025) | Tiếp nối bởi QĐ 826/QĐ-TTg (2026–2030) | — | Tiếp nối (không bãi bỏ); trích mục tiêu hiện hành dùng QĐ 826 | QĐ 826/QĐ-TTg | SKDT (SKDT-R04) |
 | TT 19/2012/TT-BKHCN, TTLT 13/2014/TTLT-BKHCN-BYT, TT 13/2018/TT-BKHCN (an toàn bức xạ) | TT 59/2025/TT-BKHCN | 01/01/2026 | Toàn bộ | TT 59/2025/TT-BKHCN (căn cứ Luật Năng lượng nguyên tử 94/2025) | CLS (CLS-R22) |
 | TTLT 03/2010, TT 04/2019, một phần TT 06/2012, TT 01/2015 (HIV) | Bãi bỏ bởi TT 10/2025/TT-BYT | 09/05/2025 | Như cột Văn bản cũ | TT 10/2025 | BAOMAT-CB |
@@ -81,7 +83,7 @@ Thứ tự: Luật/Pháp lệnh → Nghị định → Nghị quyết → Quyế
 | TT 28/2009/TT-BTTTT (tiếp cận cho người khuyết tật) | TT 26/2020/TT-BTTTT | 01/01/2021 | Toàn bộ | TT 26/2020 | CHUYENKHOA |
 | TT 40/2020/TT-BTTTT | TT 34/2025/TT-BKHCN | 01/01/2026 | Toàn bộ | TT 34 Đ8 k2 | TC-MS (TC-MS-R38) |
 | TT 18/2022/TT-BYT PL 4 (tóm tắt HSBA) → Mẫu 52/BV2 PL XXIX TT 32/2023 | Mẫu 03 (+ giấy đề nghị Mẫu 04) PL II TT 25/2025/TT-BYT | 01/07/2025 | Mẫu 52/BV2, 53/BV2 PL XXIX TT 32/2023 hết HL | TT 25/2025 Đ29 k2 (C01) | EMR, GIAYTO, DUOC |
-| TT 13/2023, TT 21/2023, TT 22/2023/TT-BYT (giá dịch vụ KCB) | Hết HL, không có bảng giá thống nhất mới; định giá theo TT 21/2024/TT-BYT. **Không** mất theo: quy tắc 30% từ lần khám thứ 2 và định mức 65 lượt/bàn khám → TT 35/2016 Đ4b sửa bởi TT 39/2024 (BHYT-GD-R36) | 01/01/2025 | Toàn bộ | TT 21/2024 Đ11 k2 | TC-MS (TC-MS-R17) |
+| TT 13/2023, TT 21/2023, TT 22/2023/TT-BYT (giá dịch vụ KCB) | Hết HL, không có bảng giá thống nhất mới; định giá theo TT 21/2024/TT-BYT. **Không** mất theo: quy tắc 30% từ lần khám thứ 2, định mức 65 lượt/bàn khám (TT 35/2016 Đ4b, BHYT-GD-R36) và cách tính ngày giường (TT 35 Đ4c, BHYT-GD-R41), cùng sửa bởi TT 39/2024 | 01/01/2025 | Toàn bộ | TT 21/2024 Đ11 k2 | TC-MS (TC-MS-R17) |
 | TT 32/2023/TT-BYT Đ34, Đ36, PL XXIV (KSK) | Sửa bởi TT 25/2026/TT-BYT (Mẫu KSK 01–04 mới) | 01/07/2026 | Một phần | TT 25/2026 Đ2 | GIAYTO (GIAYTO-R18) |
 | TTLT 24/2015/TTLT-BYT-BGTVT (KSK lái xe) | TT 36/2024/TT-BYT | 01/01/2025 | Toàn bộ | TT 36/2024 | GIAYTO (GIAYTO-R20) |
 | TT 16/2024/TT-BTTTT (triển khai, nghiệm thu, thuê dịch vụ CNTT) | TT 41/2026/TT-BKHCN | 01/07/2026 | Toàn bộ | TT 41 Đ20 k2, k4 | TC-MS |
@@ -93,6 +95,7 @@ Thứ tự: Luật/Pháp lệnh → Nghị định → Nghị quyết → Quyế
 | TT 32/2025/TT-BTC (hóa đơn) | TT 91/2026/TT-BTC | 01/07/2026 | Toàn bộ | TT 91 Đ25 k2 | TC-MS |
 | TT 59/2025/TT-BYT (sửa TT 05/2022, TBYT) | TT 24/2026/TT-BYT | 01/07/2026 | Toàn bộ | TT 24/2026 | CLS (CLS-R24) |
 | TT 02/2018/TT-BYT (GPP), điểm đ k1 Đ5 | Bãi bỏ bởi QĐ 2656/QĐ-BYT | 19/08/2026 | Một điểm (bản tự kiểm tra GPP; không liên quan yêu cầu phần mềm) | QĐ 2656/QĐ-BYT | DUOC |
+| TT 17/2020/TT-BYT (giá máu, chế phẩm máu) | TT 15/2023/TT-BYT (bảng giá Đ3 sau đó bị QĐ 3833/QĐ-BYT thay, thứ cấp) | 15/09/2023 | Toàn bộ | TT 15/2023 Đ7 k2 | BHYT-GD (BHYT-GD-R44) |
 | QĐ 4069/QĐ-BYT/2001 (mẫu HSBA) | TT 32/2023/TT-BYT PL XXVIII–XXIX | 01/01/2024 | Toàn bộ | TT 32/2023 | EMR |
 | QĐ 2824/QĐ-BYT/2004 | Bãi bỏ bởi TT 47/2025/TT-BYT | 15/02/2026 | Toàn bộ | TT 47/2025 | BAOMAT-CB |
 | QĐ 4159/QĐ-BYT/2014 (quy chế ATTT BYT) | QĐ 326/QĐ-BYT (07/02/2024) | 07/02/2024 | Toàn bộ; QĐ 326 vẫn dựa khung cũ, đọc cùng NĐ 331, TCVN 14423 | QĐ 326/QĐ-BYT | ANM (ANM-R24) |
@@ -308,7 +311,7 @@ Quy tắc chung: luôn ghi đủ **số/năm/ký hiệu cơ quan** (vd `TT 59/20
 | 60 | Luật Dữ liệu 60/2024/QH15 · Luật Hộ tịch 60/2014/QH13 (sắp bị thay) | Ghi năm | DLCN, GIAYTO |
 | 64 | Luật HIV 64/2006/QH11 · Luật Ban hành VBQPPL 64/2025/QH15 | Ghi năm | BAOMAT-CB, ANM |
 | 69 | NĐ 69/2024 (định danh, xác thực điện tử) · QĐ 69/QĐ-TTg (2025, liên thông dữ liệu ốm đau, thai sản) | Ghi loại văn bản | SKDT, GIAYTO |
-| 70 | NĐ 70/2024 (hướng dẫn Luật Căn cước) · NĐ 70/2025 (hóa đơn, hết HL 01/07/2026) · NĐ 70/2021 (quảng cáo, hết HL) | Ghi năm | SKDT, TC-MS, CHUYENKHOA |
+| 70 | NĐ 70/2015 (BHYT quân đội, công an, cơ yếu; sửa bởi NĐ 74/2025, còn HL) · NĐ 70/2024 (hướng dẫn Luật Căn cước) · NĐ 70/2025 (hóa đơn, hết HL 01/07/2026) · NĐ 70/2021 (quảng cáo, hết HL) | Ghi năm; "NĐ 70 Điều 2" trong đặc tả BHYT là NĐ 70/2015 | SKDT, TC-MS, CHUYENKHOA, BHYT-GD |
 | 71 | Luật 71/2020/QH14 (sửa Luật HIV) · Luật 71/2025/QH15 (Chương IV AI bị Luật 134 bãi bỏ) | Ghi năm | BAOMAT-CB, TELE |
 | 75 | Luật Hiến, ghép mô 75/2006/QH11 · Luật 75/2025/QH15 (sửa Luật Quảng cáo) · NĐ 75/2016 (methadone, hết HL) · NĐ 75/2017 (căn cứ TT 54/2017) · NĐ 75/2023 (BHYT, hết HL) | Ghi năm và loại | BAOMAT-CB, CHUYENKHOA, MA-LT, BHYT-GD |
 | 85 | NĐ 85/2016 (cấp độ HTTT, hết HL) · NĐ 85/2021 (TMĐT, hết HL) · NĐ 85/2024 (được CLS, TC-MS dẫn ở mảng giá/TBYT) | Ghi năm | ANM, TELE, CLS, TC-MS |

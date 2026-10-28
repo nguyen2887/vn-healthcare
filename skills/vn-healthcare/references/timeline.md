@@ -1,6 +1,6 @@
 # Dòng thời gian hạn chót
 
-> Kiểm tra lần cuối: 2026-10-27 · Mốc tham chiếu "đã qua/sắp tới": 2026-10-06
+> Kiểm tra lần cuối: 2026-10-28 · Mốc tham chiếu "đã qua/sắp tới": 2026-10-06
 
 File gộp từ mục 5 (Mốc thời gian) và mục 1 (Văn bản) của 15 file domain, đối chiếu với `research/inventory.md` mục 4. Khi hai nguồn lệch nhau, file này theo file domain. Không có sự kiện nào ngoài các file đó.
 
@@ -110,6 +110,7 @@ Quy ước:
 | **01/07/2026** | **ICD-10 theo TT 06/2026 (theo ngày kết thúc lượt)**; QĐ 1978 sửa PL 07.1 QĐ 7603 (mã bệnh YHCT, chuyển tiếp 60 ngày) | Mọi cơ sở KCB; BHXH cập nhật Cổng | TT 06/2026/TT-BYT Đ6 k1; QĐ 1978/QĐ-BYT | MA-LT (MA-LT-R01, MA-LT-R04), BHYT-DATA (BHYT-DATA-R20), CHUYENKHOA (CHUYENKHOA-R02) |
 | 01/07/2026 | TT 25/2026 Đ2, Đ3 có HL: KSK theo 4 mẫu mới; mốc PL 01/PL 02 TT 23 lùi sang 31/12/2027 / 01/01/2028 | Cơ sở có KSK; mọi cơ sở KCB | TT 25/2026/TT-BYT Đ6 k2 | GIAYTO (GIAYTO-R18), MA-LT (MA-LT-R12) |
 | **01/07/2026** | **Hạn nâng cấp phần mềm theo mẫu bảng kê QĐ 697; `MUC_HUONG` ≤ 4 ký tự và `SO_DANG_KY` thuốc hiếm theo QĐ 1931/QĐ-BYT ngày 29/06/2026** | Cơ sở KCB BHYT, vendor | QĐ 697/QĐ-BYT; QĐ 1931/QĐ-BYT (29/06/2026, thứ cấp) | BHYT-DATA (BHYT-DATA-R11, BHYT-DATA-R12, BHYT-DATA-R21), TC-MS |
+| 01/07/2026 | Lương cơ sở 2.530.000 đ; ngưỡng chi phí thấp (15%), miễn cùng chi trả (6 lần), trần gói TBYT (45 tháng) đổi giá trị | Cơ sở KCB BHYT, vendor | NĐ 161/2026/NĐ-CP Đ3 k2; CV 2275/BHXH-CSYT | BHYT-GD (BHYT-GD-R37, BHYT-GD-R38, BHYT-GD-R39) |
 | 01/07/2026 | Mức hưởng BHYT 50% cho mã đối tượng 1.13, 1.14, 1.18 (BHYT-DATA) / mức hưởng ngoại trú 50% ở một số cơ sở (BHYT-GD) | Cơ sở KCB BHYT, vendor | NĐ 188/2025 Đ19 k2–4; QĐ 3276 PL1 | BHYT-DATA (BHYT-DATA-R11), BHYT-GD (BHYT-GD-R10) |
 | **01/07/2026** | **NĐ 254/2026 + TT 91/2026/TT-BTC (hóa đơn, chứng từ điện tử) có HL; NĐ 123/2020, Đ1 NĐ 41/2022, NĐ 70/2025, TT 32/2025/TT-BTC hết HL** | Mọi người bán, cơ sở KCB | NĐ 254 Đ43 k2; TT 91 Đ25 k2 | TC-MS (TC-MS-R01, TC-MS-R02), BHYT-GD |
 | 01/07/2026 | Luật Chuyển đổi số 148/2025 + NĐ 224/2026 có HL; Luật CNTT 2006, NĐ 45/2026, NĐ 42/2022, NĐ 64/2007 hết HL; TT 39/2026, TT 41/2026/TT-BKHCN thay TT 18/2024, TT 16/2024/TT-BTTTT | BV công; vendor | Luật 148 Đ47 k2, Đ48; NĐ 224 Đ90 k2, Đ91 | TC-MS (TC-MS-R31, TC-MS-R36) |

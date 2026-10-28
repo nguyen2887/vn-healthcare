@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.3 — 2026-10-28
+
+Đợt xác minh thứ hai từ các ghi chú field BHYT 04–08 và NĐ 161/2026 (`research/field/2026-10-27-bhyt04-tro-di.md`, `2026-10-28-luong-co-so-nd161-2026.md`).
+
+- **9 yêu cầu mới BHYT-GD-R37–R45**: chi phí một lần KCB thấp (15% LCS, vẫn nhân tỷ lệ nơi KCB theo CV 2275); trần gói TBYT 45 tháng LCS × mức hưởng và stent phủ thuốc (TT 04/2017 sửa bởi TT 24/2025); lương cơ sở theo giai đoạn (NĐ 161/2026: 2.530.000 đ từ 01/07/2026; NĐ 188 Đ57, Đ18 k2 c); quyền lợi nhóm quân đội, công an, cơ yếu (NĐ 70/2015 sửa bởi NĐ 74/2025); ngày giường và giường lưu (TT 35 Đ4c, Luật KCB Đ77 k2); nhiều can thiệp trong một lần phẫu thuật (TT 35 Đ4d k2); vận chuyển người bệnh (NĐ 188 Đ14, Luật Đ21 k1 b); máu, chế phẩm máu (TT 15/2023); kháng sinh (*) (TT 37/2024 Đ10 k5). Checklist A34–A38.
+- **Sửa BHYT-DATA-R03**: miễn check-in XML0 theo từng ca được cơ sở khác chuyển người bệnh/mẫu đến làm CLS (QĐ 4750 Đ2 k2 c, NĐ 188 Đ44), không theo loại cơ sở.
+- **BHYT-DATA**: QĐ 1931 lên bản ký số (R11, R12 thành BẮT BUỘC; mẫu `SO_DANG_KY` thuốc hiếm `UBND.YYYY.X.S`); phạm vi ký `GIAMDINHHS` và định dạng XMLDSig (R07); endpoint `Qd4750` → `Qd3176` (R22); không có dung sai tổng XML1 (R10); CV 4059 vào R20; ô (16)–(18) bảng kê (R21). Thêm CV 3700, 7506, 4040, 3055, 4059, Tài liệu kỹ thuật TT 12 vào bảng văn bản.
+- **BHYT-GD**: R18 bẫy "ký từ 01/12/2024 theo CV 3700" sai căn cứ; R25 bẫy mã loại hình 10–16 chưa có chỗ trong 01/BH; R35 bẫy nhóm quân đội, công an.
+- **Supersession**: NĐ 73/2024 → NĐ 161/2026; TT 17/2020 → TT 15/2023; QĐ 124/2004 → QĐ 19/2025; TT 22/2023 không làm mất quy tắc ngày giường; bẫy số hiệu "NĐ 70" thêm NĐ 70/2015.
+- Quy trình: chủ repo ủy quyền agent tự review và merge PR, kể cả PR sửa luật.
+
 ## 0.2.2 — 2026-10-27
 
 Xác minh trên bản gốc các điểm tester nêu khi đối chiếu đặc tả BHYT 02, 03 (`research/field/2026-10-27-bhyt02-*.md`, `*-bhyt03-*.md`).
