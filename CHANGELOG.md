@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.2.2 — 2026-10-27
+
+Xác minh trên bản gốc các điểm tester nêu khi đối chiếu đặc tả BHYT 02, 03 (`research/field/2026-10-27-bhyt02-*.md`, `*-bhyt03-*.md`).
+
+- **BHYT-GD-R36 mới**: tiền khám nhiều chuyên khoa (lần 1 = 100%, lần 2–4 = 30%, lần 5 = 10%, từ lần 6 = 0%; khám lại trong ngày tính lần 2+) và định mức 65 lượt/bàn khám/08 giờ (BHXH trả 50% từ lượt 66, không giảm cùng chi trả của người bệnh). Căn cứ TT 35/2016 Đ4b, Đ4d sửa bởi TT 39/2024 Đ1 k4; TT 22/2023 hết HL không làm mất hai quy tắc này. Checklist BHYT-GD-A33.
+- **Sửa BHYT-DATA-R21**: tỷ lệ khám theo PL QĐ 697 Phần Một IV.3 là 100/30/30/30/10/0, không phải "100/30/10/0". VP-KH-10 chuyển phần tính tiền sang `[LUẬT]`.
+- **BHYT-GD-R10**: cấp cứu được hưởng 100% **mức hưởng** của thẻ (Luật Đ22 k5), không phải quỹ trả 100% chi phí; ánh xạ NĐ 188 Đ19 k1–k4 → mã 1.12/1.13/1.14/1.18, Đ22 k4 b → 3.6.
+- **Thẻ BHYT**: thêm CV 497/BHXH-CNTT (bảng mã kết quả tra thẻ, hàm `KQNhanLichSuKCB2019`) vào BHYT-GD-R02, BHYT-DATA-R04; Luật BHYT Đ16 k4 a (thẻ hết hạn lúc đến khám không có giá trị, không có "ân hạn"; bẫy ở R08); QĐ 1666/QĐ-BHXH (mẫu thẻ 2021), QĐ 1351 sửa bởi 1697, CV 1804/BHXH-QLT và CV 2036/BHXH-CSYT vào bảng văn bản và R01; TT 09/2026/TT-BTC, QĐ 2555/QĐ-BYT nâng từ thứ cấp lên bản gốc.
+- **Dữ liệu XML**: BHYT-DATA-R04 thêm quy tắc `MA_DKBD`, `GT_THE_TU`, `GT_THE_DEN` khi chưa có thẻ/thẻ tạm; R16 thêm bẫy "không còn thông tuyến" (`MA_LYDO_VVIEN` thuộc QĐ 4210 đã hết HL) và `MA_KHUVUC` ↔ mã 3.6; R03 ghi rõ không có cách hủy check-in XML0. QĐ 3176 nâng lên bản ký số đủ phụ lục.
+- Luật KCB Đ7 k2 (cấm từ chối, cố ý chậm cấp cứu) vào BHYT-GD-R06, SKDT-R10.
+- Bẫy mới: CV 1804/BHXH-QLT ≠ QĐ 1804/QĐ-BYT; ba hệ "mức hưởng"; API thẻ của QĐ 241/QĐ-BTC ≠ API Cổng giám định; trang BHXH VN cần TLS cũ nên `check_links.py` có thể báo chết giả.
+- `contributing.md`: push xong phải kiểm có PR; không có `gh` thì đưa link "Create pull request"; nhánh đã merge thì tạo nhánh mới.
+
 ## 0.2.1 — 2026-10-27
 
 - Chế độ ĐÓNG GÓP: `references/contributing.md`, `CONTRIBUTING.md`, hộp thư `research/field/` với mẫu 5 ô.

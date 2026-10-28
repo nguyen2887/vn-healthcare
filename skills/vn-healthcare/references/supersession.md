@@ -1,6 +1,6 @@
 # Chuỗi thay thế văn bản và bẫy trích dẫn
 
-> Kiểm tra lần cuối: 2026-10-06
+> Kiểm tra lần cuối: 2026-10-27
 
 Dùng file này TRƯỚC khi trích bất kỳ văn bản nào: nếu văn bản nằm ở cột "Cũ", phải trích văn bản ở cột "Mới".
 
@@ -81,7 +81,7 @@ Thứ tự: Luật/Pháp lệnh → Nghị định → Nghị quyết → Quyế
 | TT 28/2009/TT-BTTTT (tiếp cận cho người khuyết tật) | TT 26/2020/TT-BTTTT | 01/01/2021 | Toàn bộ | TT 26/2020 | CHUYENKHOA |
 | TT 40/2020/TT-BTTTT | TT 34/2025/TT-BKHCN | 01/01/2026 | Toàn bộ | TT 34 Đ8 k2 | TC-MS (TC-MS-R38) |
 | TT 18/2022/TT-BYT PL 4 (tóm tắt HSBA) → Mẫu 52/BV2 PL XXIX TT 32/2023 | Mẫu 03 (+ giấy đề nghị Mẫu 04) PL II TT 25/2025/TT-BYT | 01/07/2025 | Mẫu 52/BV2, 53/BV2 PL XXIX TT 32/2023 hết HL | TT 25/2025 Đ29 k2 (C01) | EMR, GIAYTO, DUOC |
-| TT 13/2023, TT 21/2023, TT 22/2023/TT-BYT (giá dịch vụ KCB) | Hết HL, không có bảng giá thống nhất mới; định giá theo TT 21/2024/TT-BYT | 01/01/2025 | Toàn bộ | TT 21/2024 Đ11 k2 | TC-MS (TC-MS-R17) |
+| TT 13/2023, TT 21/2023, TT 22/2023/TT-BYT (giá dịch vụ KCB) | Hết HL, không có bảng giá thống nhất mới; định giá theo TT 21/2024/TT-BYT. **Không** mất theo: quy tắc 30% từ lần khám thứ 2 và định mức 65 lượt/bàn khám → TT 35/2016 Đ4b sửa bởi TT 39/2024 (BHYT-GD-R36) | 01/01/2025 | Toàn bộ | TT 21/2024 Đ11 k2 | TC-MS (TC-MS-R17) |
 | TT 32/2023/TT-BYT Đ34, Đ36, PL XXIV (KSK) | Sửa bởi TT 25/2026/TT-BYT (Mẫu KSK 01–04 mới) | 01/07/2026 | Một phần | TT 25/2026 Đ2 | GIAYTO (GIAYTO-R18) |
 | TTLT 24/2015/TTLT-BYT-BGTVT (KSK lái xe) | TT 36/2024/TT-BYT | 01/01/2025 | Toàn bộ | TT 36/2024 | GIAYTO (GIAYTO-R20) |
 | TT 16/2024/TT-BTTTT (triển khai, nghiệm thu, thuê dịch vụ CNTT) | TT 41/2026/TT-BKHCN | 01/07/2026 | Toàn bộ | TT 41 Đ20 k2, k4 | TC-MS |
@@ -174,7 +174,7 @@ Thứ tự: Luật/Pháp lệnh → Nghị định → Nghị quyết → Quyế
 | QĐ 1813/QĐ-TTg (Đề án TTKDTM 2021–2025) | Hết giai đoạn; đề án kế nhiệm chưa xác minh | TC-MS |
 | QĐ 7713/QĐ-BYT/2016, QĐ 3926/QĐ-BYT/2017 (HL7 v2, CDA tiếng Việt) | Chưa thấy bãi bỏ; chỉ tham khảo | MA-LT (MA-LT-R22) |
 | CV 4395/BYT-KCB (2023), CV 7586/BYT-KCB (2022) | Chưa rõ còn áp dụng nguyên trạng sau các lần sửa QĐ 130 / sau TT 36/2024 | SKDT, GIAYTO |
-| QĐ 2555/QĐ-BYT (2025, TTHC KCB BHYT) | Ghi "Còn HL (?)", thứ cấp | BHYT-GD |
+| QĐ 2555/QĐ-BYT (12/08/2025, công bố TTHC KCB BHYT) | Còn HL; chỉ có bản BYT không số (2026-10-27). QĐ công bố TTHC chép NĐ 188 Đ37–38 → trích NĐ 188 | BHYT-GD |
 | QĐ 2429/QĐ-BYT (2017, tiêu chí chất lượng PXN) | Không phải VBQPPL; chưa thấy văn bản thay | CLS |
 
 ## 3. Bẫy trích dẫn thường gặp (gộp từ mục 6 các domain, khử trùng, đánh số)
@@ -321,6 +321,7 @@ Quy tắc chung: luôn ghi đủ **số/năm/ký hiệu cơ quan** (vd `TT 59/20
 | 165 | NĐ 165/2025 (chi tiết Luật Dữ liệu) · NĐ 165/2026 (chi tiết Luật Phòng bệnh) | Ghi năm | BAOMAT-CB, HTTT-BC, DLCN, CHUYENKHOA |
 | 313 | NĐ 313/2026/NĐ-CP (chức năng BYT) · QĐ 313/QĐ-BYT (29/01/2026, giá CĐHA dùng PACS) | Ghi loại | CLS |
 | 330 | NĐ 330/2026 (xử phạt ANM, BVDLCN) · QĐ 330/QĐ-QLD (2019, chuẩn kết nối, hết HL) | Ghi loại | ANM, DLCN, DUOC |
+| 1804 | **CV 1804/BHXH-QLT** (04/08/2025, số định danh thay mã số BHXH, mã đối tượng tham gia, mức hưởng %) · **QĐ 1804/QĐ-BYT** (2026, loại hình KCB, mã khoa, bỏ PL1 QĐ 824, PL6 QĐ 2010 từ 01/08/2026) | Ghi ký hiệu cơ quan: BHXH-QLT hay QĐ-BYT | BHYT-GD, BHYT-DATA |
 | 1931 | **QĐ 1931/QĐ-BYT năm 2016** (tẩy sán lá gan) · **QĐ 1931/QĐ-BYT ngày 29/06/2026** (sửa QĐ 130, chuẩn dữ liệu) | Luôn ghi "QĐ 1931/QĐ-BYT ngày 29/06/2026 sửa QĐ 130" (C23) | BHYT-DATA, GIAYTO, SKDT |
 | 2113 | QĐ 2113/QĐ-BKHCN (14/04/2026, sở hữu trí tuệ) · QĐ 2113/QĐ-BYT (10/07/2026, khung kiến trúc dữ liệu) | Ghi cơ quan ban hành | MA-LT |
 | CT 07 | CT 07/CT-BYT (09/2026, điểm nghẽn CĐS y tế) · CT 07/CT-TTg (09/2025, theo inventory) | Ghi cơ quan và năm | ANM, HTTT-BC, SKDT |

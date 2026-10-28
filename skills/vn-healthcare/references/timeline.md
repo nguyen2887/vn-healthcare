@@ -1,6 +1,6 @@
 # Dòng thời gian hạn chót
 
-> Kiểm tra lần cuối: 2026-10-06 · Mốc tham chiếu "đã qua/sắp tới": 2026-10-06
+> Kiểm tra lần cuối: 2026-10-27 · Mốc tham chiếu "đã qua/sắp tới": 2026-10-06
 
 File gộp từ mục 5 (Mốc thời gian) và mục 1 (Văn bản) của 15 file domain, đối chiếu với `research/inventory.md` mục 4. Khi hai nguồn lệch nhau, file này theo file domain. Không có sự kiện nào ngoài các file đó.
 
@@ -138,7 +138,7 @@ Quy ước:
 | 15/02/2026 | NĐ 342/2025 (chi tiết Luật Quảng cáo) có HL; TT 03/2026 bỏ thủ tục xác nhận nội dung quảng cáo dịch vụ KCB | Cơ sở KCB, nền tảng | NĐ 342/2025; TT 03/2026/TT-BYT | CHUYENKHOA (CHUYENKHOA-R26) |
 | 15/02/2026 | TT 47/2025 (bãi bỏ QĐ 2824/2004, TT 22/2024) và TT 57/2025 (phân nhóm TBYT) có HL | Vendor HIS, BV | TT 47/2025, TT 57/2025/TT-BYT | BAOMAT-CB (BAOMAT-CB-R28) |
 | 10/02/2026 | TT 12/2026/TT-BTC có HL: Cổng tiếp nhận, tài khoản, phản hồi 06/24/48 giờ, giám định | Cơ sở KCB BHYT, BHXH | TT 12/2026/TT-BTC | BHYT-GD (BHYT-GD-R16, BHYT-GD-R22) |
-| 03/02/2026 | Thẻ BHYT bản điện tử (thứ cấp) | Cơ sở KCB BHYT | TT 09/2026/TT-BTC | BHYT-GD |
+| 03/02/2026 | Thẻ BHYT bản điện tử; không đòi thẻ giấy, cơ sở tra giá trị thẻ (Đ6 k3) | Cơ sở KCB BHYT | TT 09/2026/TT-BTC | BHYT-GD (BHYT-GD-R01) |
 | 29/01/2026 | Giá CĐHA dùng PACS đầu tiên (BV Bạch Mai) | BV Bạch Mai | QĐ 313/QĐ-BYT | CLS (CLS-R20) |
 | 16/01/2026 | NĐ 310/2025 sửa NĐ 125/2020 (khung phạt hóa đơn) | Mọi người bán | NĐ 310/2025/NĐ-CP | TC-MS (TC-MS-R02) |
 | 14/01/2026 | NĐ 15/2026 sửa NĐ 23/2025 (chữ ký điện tử) | Tổ chức cung cấp dịch vụ chứng thực | NĐ 15/2026/NĐ-CP | BAOMAT-CB (BAOMAT-CB-R26) |

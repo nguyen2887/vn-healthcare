@@ -47,7 +47,14 @@ git diff --stat   # chỉ được chạm vùng cho phép
 
 ## 5. Mở PR
 
-Nhánh `field/<tên>-<chủ đề>`, push, `gh pr create`. Mô tả PR:
+Nhánh `field/<tên>-<chủ đề>`, push, `gh pr create`.
+
+**Push xong chưa phải là xong.** Nội dung chỉ vào `main` (và hiện trên GitHub ở trang chính) khi PR được chủ repo merge. Trước khi kết thúc phiên, kiểm tra PR đã tồn tại (`gh pr view` hoặc mở trang nhánh):
+- Không có `gh`, hoặc `gh` chưa đăng nhập: **không dừng im lặng**. Đưa người dùng link `https://github.com/nguyen2887/vn-healthcare/compare/main...<nhánh>?expand=1`, bảo họ bấm "Create pull request" và dán sẵn mô tả bên dưới để họ copy.
+- Ghi thêm vào nhánh đã có PR mở: chỉ cần push, PR tự cập nhật. Nhánh có PR đã merge: tạo nhánh mới từ `main` mới nhất, đừng push tiếp lên nhánh cũ.
+- Nói rõ với người dùng trạng thái cuối: "đã push, PR #…, chờ chủ repo duyệt" hoặc "đã push, CHƯA có PR, bấm link này".
+
+Mô tả PR:
 
 ```
 ## Quan sát

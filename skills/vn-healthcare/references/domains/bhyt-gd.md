@@ -1,6 +1,6 @@
 # BHYT-GD — Giám định, thanh toán và quy trình dữ liệu BHYT
 
-> Kiểm tra lần cuối: 2026-10-06 · Áp dụng: BV công, BV tư, phòng khám có hợp đồng KCB BHYT; cơ sở/phòng xét nghiệm nhận chuyển DVCLS; vendor HIS · Research gốc: `research/deep/BHYT-GD.md`
+> Kiểm tra lần cuối: 2026-10-27 · Áp dụng: BV công, BV tư, phòng khám có hợp đồng KCB BHYT; cơ sở/phòng xét nghiệm nhận chuyển DVCLS; vendor HIS · Research gốc: `research/deep/BHYT-GD.md`
 
 Không phải ý kiến pháp lý. Phạm vi: tiếp đón và tra cứu thẻ, mức hưởng, chuyển cơ sở, phiếu hẹn, chuyển DVCLS, tài khoản Cổng, ký số/xác thực, thời hạn gửi, phản hồi Cổng, giám định tự động/chủ động, tổng hợp và quyết toán, xử phạt. Chuẩn XML, bộ mã, bảng kê 697 → **BHYT-DATA**. Liên thông CLS chi tiết → **CLS**. Hóa đơn → **TC-MS**. VNeID, Sổ SKĐT → **SKDT**. HSBA, ký số chung → **EMR**.
 
@@ -54,6 +54,7 @@ Không phải ý kiến pháp lý. Phạm vi: tiếp đón và tra cứu thẻ, 
 | BHYT-GD-R33 | Ký xác nhận khi người bệnh không làm thủ tục |
 | BHYT-GD-R34 | Chuẩn bị cho dự thảo thay TT 48 (03 giờ) |
 | BHYT-GD-R35 | Chi phí ngoài phạm vi phải thông báo trước |
+| BHYT-GD-R36 | Tiền khám nhiều chuyên khoa và định mức lượt khám/bàn khám |
 
 ## 1. Văn bản
 
@@ -66,10 +67,16 @@ Không phải ý kiến pháp lý. Phạm vi: tiếp đón và tra cứu thẻ, 
 | Dự thảo TT ứng dụng CNTT, CĐS, chia sẻ dữ liệu BHYT (thay TT 48/2017) | Gửi ≤ 03 giờ, 15 ngày đối chiếu, khóa dữ liệu, chế tài theo bậc | Dự kiến 01/01/2027; góp ý đến 07/10/2026 | **Dự thảo** | thứ cấp (chưa có toàn văn) | [vtv (báo, bối cảnh)](https://vtv.vn/de-xuat-co-so-y-te-phai-gui-du-lieu-bhyt-trong-vong-3-gio-sau-kham-cham-nhieu-lan-co-the-bi-xu-phat-100261001082022915.htm) · [baohaiphong (báo, bối cảnh)](https://baohaiphong.vn/de-xuat-phat-co-so-kham-chua-benh-cham-gui-du-lieu-bao-hiem-y-te-554711.html) |
 | 90/2026/NĐ-CP (30/03/2026) | Xử phạt VPHC y tế (mục BHYT Đ81–95); thay NĐ 117/2020 | 15/05/2026 | Còn HL | gốc-OCR (Đ95 k4 đã đối chiếu ảnh trang, xem GIAYTO) | [VB 217386](https://vanban.chinhphu.vn/?pageid=27160&docid=217386) · [PDF](https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/4/90-ndcp.signed.pdf) |
 | 01/2025/TT-BYT | Hướng dẫn Luật BHYT (lưu trú, chuyển người bệnh, phiếu hẹn, phiếu chuyển) | 01/01/2025 | Còn HL; sửa bởi TT 06/2026 Đ5 k2 | gốc | [PDF](https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/01/01-byt.pdf) |
+| 35/2016/TT-BYT (28/09/2016), sửa bởi 39/2024/TT-BYT (17/11/2024) | Danh mục, tỷ lệ, điều kiện thanh toán DVKT BHYT; TT 39 Đ1 k4 bổ sung Đ4a–4d: tiền khám nhiều chuyên khoa, định mức 65 lượt/bàn khám | TT 39: 01/01/2025 | Còn HL; TT 39 sửa, không thay TT 35 | gốc (TT 39, ký số) | [VB 211771](https://vanban.chinhphu.vn/?pageid=27160&docid=211771) · [PDF TT 39](https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/11/39-byt.pdf) |
+| 15/2023/QH15 (VBHN 26/VBHN-VPQH, 26/02/2026) | Luật KCB: Đ7 k2 (cấm từ chối, cố ý chậm cấp cứu), Đ40 (trường hợp được từ chối) | 01/01/2024 | Còn HL | gốc | [PDF VBHN](https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/26-vbhn-vpqh.pdf) |
 | 06/2026/TT-BYT (02/04/2026) | ICD-10; Đ5 k2 sửa mẫu phiếu TT 01 (ký số thay đóng dấu) | 01/07/2026; Đ5 k2, k3 từ 01/06/2026 | Còn HL | gốc | [PDF](https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/4/06-byt.pdf) |
 | 164/2025/NĐ-CP | GDĐT lĩnh vực BHXH, CSDL quốc gia về bảo hiểm | 01/07/2025 | Còn HL; NĐ 43/2021 hết HL | gốc-OCR | [PDF](https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/7/164-cp.signed.pdf) |
-| 09/2026/TT-BTC (03/02/2026) | Sổ BHXH, thẻ BHYT bản điện tử | Từ ngày ký | Còn HL (theo tin BHXH) | thứ cấp, chưa mở bản gốc | link chưa kiểm tra được (trang tin BHXH VN từ chối truy cập khi kiểm tra 2026-10-06) |
-| 2555/QĐ-BYT (12/08/2025) | Thủ tục hành chính KCB BHYT (VNeID mức 2, VssID, căn cước) | 15/08/2025 | Còn HL (?) | thứ cấp | link chưa kiểm tra được (như trên) |
+| 09/2026/TT-BTC (03/02/2026) | Tạo lập, sử dụng sổ BHXH, thẻ BHYT bản điện tử; Đ6 k3 không đòi thẻ giấy, cơ sở phải tra giá trị thẻ; Đ8 k2 thẻ trên VssID cấp trước đó vẫn có giá trị như bản giấy | 03/02/2026 (Đ9 k1) | Còn HL; không áp cho đối tượng BQP, BCA quản lý (Đ1 k1 b) | gốc-ảnh (bản sao y ký số BHXH VN; không có trên vanban.chinhphu.vn) | [VB BHXH ItemID 4992](https://baohiemxahoi.gov.vn/vanban/Pages/default.aspx?ItemID=4992) · [PDF](https://baohiemxahoi.gov.vn:4545/File_Server_BHXH/documents/N409.pdf) |
+| 2555/QĐ-BYT (12/08/2025) | Công bố TTHC "KCB BHYT" (các trường hợp xuất trình thẻ); thay QĐ 7291/2018, 4524/2023, 160/2025 | 15/08/2025 | Còn HL; QĐ công bố TTHC, không phải VBQPPL, chép lại NĐ 188 Đ37–38 → trích NĐ 188 | nội dung: bản BYT không số đính kèm tin BHXH VN; số, ngày: tin BHXH VN | [PDF đính kèm tin BHXH VN](https://baohiemxahoi.gov.vn/content/tintuc/Lists/News/Attachments/25292/Quy%E1%BA%BFt%20%C4%91%E1%BB%8Bnh%202555_Q%C4%90-BYT%20c%E1%BB%A7a%20B%E1%BB%99%20Y%20t%E1%BA%BF%20v%E1%BB%81%20vi%E1%BB%87c%20c%C3%B4ng%20b%E1%BB%91%20th%E1%BB%A7%20t%E1%BB%A5c%20h%C3%A0nh%20ch%C3%ADnh%20m%E1%BB%9Bi%20ban%20h%C3%A0nh%2C%20%C4%91%C6%B0%E1%BB%A3c%20s%E1%BB%ADa%20%C4%91%E1%BB%95i%2C%20b%E1%BB%95%20sung%20.pdf) |
+| 497/BHXH-CNTT (21/02/2019) | Hàm `KQNhanLichSuKCB2019` của Cổng giám định: thông tin thẻ, thẻ cũ/mới, lịch sử KCB, lịch sử tra cứu; bảng mã kết quả tra thẻ | Từ ngày ký | Hướng dẫn kỹ thuật, không phải VBQPPL; chưa thấy thay thế; căn cứ cũ NĐ 146/2018 | gốc-ảnh (bản scan có chữ ký, dấu, bên thứ ba đăng lại) | [PDF, BV Phụ sản Thanh Hóa](https://benhvienphusanthanhhoa.vn/?call=file.download&file_id=635682781) |
+| 1804/BHXH-QLT (04/08/2025) + 2036/BHXH-CSYT (22/08/2025) | Số định danh cá nhân/CCCD thay mã số BHXH (mã số 10 số dùng song song trong thời gian chuyển đổi); PL I mã đối tượng tham gia kèm mức hưởng tính bằng %; CV 2036: cơ sở KCB tra bằng ĐDCN, quyền lợi cao nhất | 01/08/2025 | Hướng dẫn nghiệp vụ BHXH; chưa thấy thay thế. **Khác QĐ 1804/QĐ-BYT** | CV 1804: gốc-ảnh (thân, bản sao y đăng lại), thứ cấp (PL I, bản không số); CV 2036: gốc | [CV 1804, ebh.vn](https://ebh.vn/Download/vanbanphapquy/cong-van-1804-bhxh-qlt-482025.pdf) · [CV 2036, BHXH VN](https://baohiemxahoi.gov.vn/content/tintuc/Lists/News/Attachments/25348/CV%202036%20cua%20BHXH%20VN.pdf) |
+| 1666/QĐ-BHXH (03/12/2020) | Mẫu thẻ BHYT: mã số 10 ký tự (mã số BHXH); in mã mức hưởng 1–5, K1/K2/K3, thời điểm đủ 05 năm, mã vạch 2 chiều | 01/04/2021; thay QĐ 1313/2014 | Chưa thấy thay thế; căn cứ hiện hành Luật BHYT Đ16 k5 | gốc-ảnh (bản scan có chữ ký, ebh.vn đăng lại) | [PDF](https://ebh.vn/Download/vanbanphapquy/quyet-dinh-1666-qd-bhxh-ban-hanh-mau-the-bao-hiem-y-te.pdf) |
+| 1351/QĐ-BHXH (16/11/2015), sửa bởi 1697/QĐ-BHXH (27/11/2023) | Mã thẻ 15 ký tự (4 ô); 1697 sửa Đ2: mã đối tượng, ký hiệu mức hưởng | 1697: 03/12/2023 | Văn bản nghiệp vụ BHXH; căn cứ NĐ 146/2018 đã hết HL; chưa thấy bãi bỏ; hiệu lực sau NĐ 188 chưa xác minh | 1697: gốc-ảnh; 1351: thứ cấp | [QĐ 1697, BHXH VN](https://baohiemxahoi.gov.vn:4545/File_Server_BHXH/documents/9542_BHXHVN_1697-Q%C4%90-BHXH_27112023.pdf) |
 | Phụ lục 01 "Hướng dẫn liên thông dữ liệu theo QĐ 3176" kèm CV …/BHXH-CNTT (số, ngày để trống) | Đăng ký chứng thư, API token, check-in, gửi XML, `CHUKYDONVI` SHA256 | Ký số 07/01/2026 (theo tên file) | Hướng dẫn kỹ thuật, không phải VBQPPL | thứ cấp (bản đăng lại) | [PDF, UBND xã Khánh Cường](https://khanhcuong.quangngai.gov.vn/upload/2007018/20260128/PL01_li%C3%AAn%20th%C3%B4ng%20d%E1%BB%AF%20li%E1%BB%87u_3176_k%C3%BD%20s%E1%BB%91_07012026%20(1).pdf) |
 
 Dự thảo TT BTC về Cổng tiếp nhận dữ liệu (hướng dẫn NĐ 188 Đ71 k2 d) **đã được hấp thụ vào TT 12/2026**; không trích dự thảo riêng.
@@ -88,17 +95,17 @@ Dự thảo TT BTC về Cổng tiếp nhận dữ liệu (hướng dẫn NĐ 188
 ## 2. Yêu cầu
 
 ### BHYT-GD-R01 — Chấp nhận mọi hình thức xuất trình thẻ
-- **Căn cứ**: Luật 51/2024 Đ1 k14 (sửa Đ16 k1 Luật BHYT): thẻ BHYT "được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau". NĐ 188 Đ11 k1 (bản giấy chỉ khi người tham gia đề nghị); Đ37 k1 (xuất trình căn cước/VNeID mức 2 đã tích hợp thẻ, hoặc thẻ điện tử/giấy; thẻ chưa có ảnh kèm giấy tờ nhân thân), k2 (trẻ dưới 6 tuổi chỉ cần thẻ hoặc mã số; chưa có thì giấy chứng sinh), k4 (người hiến bộ phận). TT 09/2026/TT-BTC (thứ cấp): không yêu cầu thẻ giấy khi dùng thẻ điện tử.
+- **Căn cứ**: Luật 51/2024 Đ1 k14 (sửa Đ16 k1 Luật BHYT): thẻ BHYT "được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau". NĐ 188 Đ11 k1 (bản giấy chỉ khi người tham gia đề nghị); Đ37 k1 (xuất trình căn cước/VNeID mức 2 đã tích hợp thẻ, hoặc thẻ điện tử/giấy; thẻ chưa có ảnh kèm giấy tờ nhân thân), k2 (trẻ dưới 6 tuổi chỉ cần thẻ hoặc mã số; chưa có thì giấy chứng sinh), k4 (người hiến bộ phận). TT 09/2026/TT-BTC Đ6 k3: cơ sở "không yêu cầu người tham gia cung cấp thẻ bảo hiểm y tế bản giấy khi khám bệnh, chữa bệnh bằng thẻ bảo hiểm y tế bản điện tử và có trách nhiệm tra cứu giá trị sử dụng thẻ"; Đ8 k2 (thẻ trên VssID cấp trước 03/02/2026 vẫn có giá trị như bản giấy). CV 1804/BHXH-QLT, CV 2036/BHXH-CSYT: tra bằng số định danh cá nhân, mã số BHXH 10 số dùng song song. QĐ 1666/QĐ-BHXH Đ3 k1 (mẫu thẻ 2021).
 - **Áp dụng**: mọi cơ sở KCB BHYT · **Hiệu lực/hạn**: 15/08/2025
 - **Mức**: BẮT BUỘC
-- **Phần mềm phải**: tiếp đón nhận số định danh (quét QR căn cước), mã số BHYT, dữ liệu VNeID/VssID; không có trường bắt buộc ảnh/scan thẻ giấy; lưu `hinh_thuc_xuat_trinh`; nhánh riêng trẻ dưới 6 tuổi và người hiến.
+- **Phần mềm phải**: tiếp đón nhận số định danh (quét QR căn cước), mã số BHYT (10 số theo mẫu thẻ 2021, 15 ký tự theo mã thẻ cũ và dữ liệu Cổng), dữ liệu VNeID/VssID; ký hiệu mức hưởng 1–5 và K1/K2/K3 in trên thẻ giấy chỉ để đối chiếu, mức hưởng áp dụng lấy theo Cổng; không có trường bắt buộc ảnh/scan thẻ giấy; lưu `hinh_thuc_xuat_trinh`; nhánh riêng trẻ dưới 6 tuổi và người hiến.
 - **Bẫy**: thông tin thẻ đồng bộ theo cả mã số BHYT và số căn cước (NĐ 188 Đ10 k3). Quân đội, công an chưa có thông tin thẻ trên hệ thống vẫn xuất trình thẻ giấy (Đ37 k1 b) — đừng chặn cứng "chỉ thẻ điện tử".
 
 ### BHYT-GD-R02 — Tra cứu thẻ trên Cổng và lưu kết quả
-- **Căn cứ**: TT 12/2026 Đ4 k1 (tra cứu thẻ, lịch sử KCB khi người bệnh đến, trong điều trị hoặc khi kết thúc lượt), k2 (Cổng trả thông tin thẻ, cùng chi trả lũy kế trong năm, thẻ bị thu hồi/tạm giữ/tạm khóa, lịch sử KCB); Đ2 k1 (Cổng `https://gdbhyt.baohiemxahoi.gov.vn`). TT 48 Đ13 k2; Đ6 k2 a (lịch sử KCB tối thiểu 06 tháng).
+- **Căn cứ**: TT 12/2026 Đ4 k1 (tra cứu thẻ, lịch sử KCB khi người bệnh đến, trong điều trị hoặc khi kết thúc lượt), k2 (Cổng trả thông tin thẻ, cùng chi trả lũy kế trong năm, thẻ bị thu hồi/tạm giữ/tạm khóa, lịch sử KCB); Đ2 k1 (Cổng `https://gdbhyt.baohiemxahoi.gov.vn`). TT 48 Đ13 k2; Đ6 k2 a (lịch sử KCB tối thiểu 06 tháng). Luật BHYT Đ16 k4 a (Luật 51 không sửa): thẻ đã hết thời hạn sử dụng thì không có giá trị sử dụng; Đ16 k3 b: tham gia liên tục thì giá trị nối tiếp. CV 497/BHXH-CNTT (hàm `KQNhanLichSuKCB2019`): mã kết quả 000 thẻ đúng; 001, 002 thẻ BQP, BCA quản lý → kiểm thẻ và giấy tờ tùy thân; 003, 004 thẻ cũ được cấp thẻ mới → dùng `maTheMoi`, `gtTheTuMoi`, `gtTheDenMoi`; 010 hết giá trị; 050 không có thông tin thẻ; 051–053 mã thẻ sai; 060, 061 sai họ tên; 070 sai ngày sinh; 110 đã thu hồi; 120–124 đã báo giảm; 130 trẻ em không xuất trình thẻ; 100, 101, 205, 401 lỗi hệ thống, tham số, xác thực.
 - **Áp dụng**: mọi cơ sở KCB BHYT · **Hiệu lực/hạn**: 10/02/2026
 - **Mức**: BẮT BUỘC
-- **Phần mềm phải**: tra cứu ở 3 thời điểm (tiếp đón, khi cần trong điều trị, trước khi kết thúc lượt/ra viện); lưu nguyên phản hồi gắn lượt KCB; cảnh báo chặn khi thẻ thu hồi/tạm khóa; hiển thị lịch sử KCB cho bác sĩ. Phần dữ liệu đưa vào XML, bảng kê: BHYT-DATA-R04.
+- **Phần mềm phải**: tra cứu ở 3 thời điểm (tiếp đón, khi cần trong điều trị, trước khi kết thúc lượt/ra viện); lưu nguyên phản hồi gắn lượt KCB; cảnh báo chặn khi thẻ thu hồi/tạm khóa (110, 120–124); 001, 002 kiểm thẻ và giấy tờ tùy thân theo chính mô tả mã; 050–070 cũng chuyển sang kiểm giấy tờ thay vì chặn cứng (suy luận: BQP, BCA có thể chưa có dữ liệu trên hệ thống, NĐ 188 Đ37 k1; không chặn người có quyền hưởng, NĐ 90 Đ95 k1 a); 100, 101, 205, 401 đi nhánh Cổng lỗi R03; so hạn thẻ với **thời điểm đến khám**; hiển thị lịch sử KCB cho bác sĩ. Phần dữ liệu đưa vào XML, bảng kê: BHYT-DATA-R04.
 - **Bẫy**: "6 lần khám trong 12 tháng" là chữ của dự thảo cổng; TT 12 bản gốc dẫn TT 48 Đ6 k2 a (06 tháng).
 
 ### BHYT-GD-R03 — Dự phòng khi VNeID/VssID/Cổng lỗi
@@ -121,10 +128,10 @@ Dự thảo TT BTC về Cổng tiếp nhận dữ liệu (hướng dẫn NĐ 188
 - **Phần mềm phải**: luồng lấy/đề nghị mã thẻ tạm; liên kết mã tạm với mã chính thức; trường xác nhận của cha/mẹ trên HSBA trẻ sơ sinh.
 
 ### BHYT-GD-R06 — Xuất trình thẻ muộn và cấp cứu
-- **Căn cứ**: NĐ 188 Đ38 k1, Đ50 k6 (xuất trình muộn: quỹ trả từ thời điểm xuất trình, trừ cấp cứu; phần trước thanh toán trực tiếp theo Đ55–57); Luật 51 Đ1 k23 (Đ28 k1) và NĐ 188 Đ37 k5 (cấp cứu xuất trình trước khi kết thúc đợt).
+- **Căn cứ**: NĐ 188 Đ38 k1, Đ50 k6 (xuất trình muộn: quỹ trả từ thời điểm xuất trình, trừ cấp cứu; phần trước thanh toán trực tiếp theo Đ55–57); Luật 51 Đ1 k23 (Đ28 k1) và NĐ 188 Đ37 k5 (cấp cứu xuất trình trước khi kết thúc đợt). Luật KCB Đ7 k2 (cấm "từ chối hoặc cố ý chậm cấp cứu người bệnh", trừ Đ40; kể cả khi được từ chối vẫn phải sơ cứu, cấp cứu đến khi chuyển giao, Đ40 k1).
 - **Áp dụng**: mọi cơ sở KCB BHYT · **Hiệu lực/hạn**: 01/01/2025; 15/08/2025
 - **Mức**: BẮT BUỘC
-- **Phần mềm phải**: lưu `thoi_diem_xuat_trinh_the`; tách chi phí trước/sau mốc (trừ cấp cứu); in chứng từ phần tự trả để người bệnh làm thanh toán trực tiếp.
+- **Phần mềm phải**: lưu `thoi_diem_xuat_trinh_the`; tách chi phí trước/sau mốc (trừ cấp cứu); in chứng từ phần tự trả để người bệnh làm thanh toán trực tiếp. Lượt cấp cứu không bị chặn bởi tra thẻ, tạm ứng hay giấy tờ: mọi bước bắt buộc ở tiếp đón có nhánh bỏ qua cho cấp cứu, ghi lại để bổ sung sau (suy luận từ Đ7 k2).
 
 ### BHYT-GD-R07 — Kiểm tra lại mức hưởng trước khi kết thúc lượt
 - **Căn cứ**: NĐ 188 Đ21 k1 (nhiều mức hưởng thì lấy mức cao nhất), k2 (mức mới tính từ khi thẻ mới có giá trị; cơ sở phải kiểm tra quyền lợi, mức hưởng trước khi kết thúc lượt, ra viện); NĐ 90 Đ90 (xác định quyền lợi sai thông tin trên thẻ).
@@ -137,6 +144,7 @@ Dự thảo TT BTC về Cổng tiếp nhận dữ liệu (hướng dẫn NĐ 188
 - **Áp dụng**: cơ sở có điều trị · **Hiệu lực/hạn**: 01/07/2025
 - **Mức**: BẮT BUỘC
 - **Phần mềm phải**: ngày được hưởng = min(ngày ra, ngày hết hạn + 15); phần vượt chuyển người bệnh tự trả, có cảnh báo.
+- **Bẫy**: 15 ngày chỉ áp cho thẻ **còn hạn khi vào** rồi hết hạn trong đợt. Thẻ đã hết hạn lúc tiếp đón thì không có giá trị (Luật BHYT Đ16 k4 a); không có "ân hạn" ở tiếp đón (chữ "ân hạn" không có trong văn bản nào). Thẻ tham gia liên tục có giá trị nối tiếp (Đ16 k3 b): Cổng trả 003/004 thì lấy hạn thẻ mới.
 
 ### BHYT-GD-R09 — Miễn cùng chi trả
 - **Căn cứ**: Luật 51 Đ1 k17 (Đ22 k1 d Luật BHYT); NĐ 188 Đ18 k2 (100% từ khi đồng thời đủ 5 năm liên tục và cùng chi trả lũy kế vượt ngưỡng, đến hết 31/12; điểm b: BHXH công bố lũy kế và thời điểm đủ 5 năm trên Cổng, cơ sở căn cứ đó; điểm c: quy đổi khi lương cơ sở đổi); TT 12 Đ4 k2.
@@ -146,10 +154,10 @@ Dự thảo TT BTC về Cổng tiếp nhận dữ liệu (hướng dẫn NĐ 188
 - **Bẫy**: luật dùng "mức tham chiếu", tạm theo lương cơ sở đến khi Chính phủ quyết định khác (Luật 51 Đ3 k5 b) — tham số hóa.
 
 ### BHYT-GD-R10 — Mức hưởng theo cấp CMKT, lộ trình 2026
-- **Căn cứ**: Luật 51 Đ1 k17 (Đ22 k1, k3, k4, k5); NĐ 188 Đ19 (từ 01/01/2025 ngoại trú tại cơ sở cấp cơ bản dưới 50 điểm hoặc tạm xếp cấp cơ bản: 100% mức hưởng; **từ 01/07/2026** 50% mức hưởng khi ngoại trú tại k2 cơ sở cấp cơ bản 50 đến dưới 70 điểm, k3 cơ sở cấp cơ bản trước 01/01/2025 là tuyến tỉnh/TW, k4 cơ sở cấp chuyên sâu trước 01/01/2025 là tuyến tỉnh); TT 01/2025 Đ4 (lưu trú dưới 30 ngày, VNeID mức 2); Luật Đ22 k5 (cấp cứu 100% mọi cơ sở); NĐ 188 Đ35 k2 e (công khai kết quả xếp cấp kèm điểm).
+- **Căn cứ**: Luật 51 Đ1 k17 (Đ22 k1, k3, k4, k5); NĐ 188 Đ19 (từ 01/01/2025 ngoại trú tại cơ sở cấp cơ bản dưới 50 điểm hoặc tạm xếp cấp cơ bản: 100% mức hưởng; **từ 01/07/2026** 50% mức hưởng khi ngoại trú tại k2 cơ sở cấp cơ bản 50 đến dưới 70 điểm, k3 cơ sở cấp cơ bản trước 01/01/2025 là tuyến tỉnh/TW, k4 cơ sở cấp chuyên sâu trước 01/01/2025 là tuyến tỉnh); TT 01/2025 Đ4 (lưu trú dưới 30 ngày, VNeID mức 2); Luật Đ22 k5 (cấp cứu tại bất kỳ cơ sở nào được hưởng 100% **mức hưởng** của thẻ theo k1, tức 80/95/100% tùy đối tượng; không phải quỹ trả 100% chi phí); NĐ 188 Đ35 k2 e (công khai kết quả xếp cấp kèm điểm).
 - **Áp dụng**: mọi cơ sở KCB BHYT · **Hiệu lực/hạn**: 01/01/2025; 01/07/2026 (đã qua)
 - **Mức**: BẮT BUỘC
-- **Phần mềm phải**: cấu hình cơ sở: cấp CMKT, điểm xếp cấp, cờ tuyến cũ trước 01/01/2025; bảng quy tắc tỷ lệ theo (cấp, nội/ngoại trú, đúng/không đúng nơi đăng ký, lý do: cấp cứu, chuyển đúng trình tự, lưu trú, tạm trú, bệnh hiếm Đ22 k4 a) có ngày hiệu lực.
+- **Phần mềm phải**: cấu hình cơ sở: cấp CMKT, điểm xếp cấp, cờ tuyến cũ trước 01/01/2025; bảng quy tắc tỷ lệ theo (cấp, nội/ngoại trú, đúng/không đúng nơi đăng ký, lý do: cấp cứu, chuyển đúng trình tự, lưu trú, tạm trú, bệnh hiếm Đ22 k4 a, nơi sinh sống K1/K2/K3 khi nội trú cấp chuyên sâu Đ22 k4 b) có ngày hiệu lực. Ánh xạ sang mã đối tượng KCB PL1 QĐ 3276 (`BHYT-DATA-R16`): NĐ 188 Đ19 k1 → 1.12, k2 → 1.13, k3 → 1.14, k4 → 1.18; Luật Đ22 k4 b → 3.6. Không còn lý do "thông tuyến".
 - **Bẫy**: mã hóa `MUC_HUONG` trong XML: BHYT-DATA-R11.
 
 ### BHYT-GD-R11 — Phiếu chuyển cơ sở KCB
@@ -313,7 +321,14 @@ Dự thảo TT BTC về Cổng tiếp nhận dữ liệu (hướng dẫn NĐ 188
 - **Mức**: BẮT BUỘC
 - **Phần mềm phải**: khi chỉ định dịch vụ theo yêu cầu/ngoài danh mục cho người có thẻ, hiển thị và ghi nhận xác nhận đã thông báo (người bệnh ký); tách đúng `T_BNTT` với `T_BNCCT`.
 
-**Tổng**: 35 yêu cầu. BẮT BUỘC 31 (R01–R13, R15, R17–R26, R28–R33, R35); BẮT BUỘC? 2 (R14; R16 phần yêu cầu phần mềm); NÊN 2 (R27 phần công cụ phần mềm; R34 dự thảo).
+### BHYT-GD-R36 — Tiền khám nhiều chuyên khoa và định mức lượt khám/bàn khám
+- **Căn cứ**: TT 35/2016 Đ4b (bổ sung bởi TT 39/2024 Đ1 k4): k1 vào nội trú qua khoa khám bệnh thì tính tiền khám theo k3, vào thẳng khoa lâm sàng không đăng ký khám thì không thanh toán tiền khám; k2 khám chuyên khoa tại khoa lâm sàng tính như khám tại khoa khám bệnh; k3 trong cùng một lần đến khám (có thể sang ngày tiếp theo) "từ lần khám thứ 02 chỉ tính 30% mức giá của 01 lần khám bệnh", tổng không quá 02 lần giá một lần khám; k4 khám lại trong ngày do bất thường là lần thứ 02 trở đi, trừ cấp cứu tính lần mới; k5 bàn khám trên **65 lượt/08 giờ** thì BHXH chỉ trả 50% giá khám từ lượt thứ 66, kéo dài tối đa 03 tháng liên tiếp thì không trả từ lượt 66 (giờ khám dài hơn thì quy đổi, ví dụ 10 giờ = 81 lượt). Đ4d k7 (quy tắc k5 chỉ áp giữa BHXH và cơ sở, **không** dùng để tính cùng chi trả của người bệnh), k8 (thiên tai, thảm họa, dịch bệnh có thông báo: trả theo thực tế). PL QĐ 697 Phần Một IV.3 quy ra tỷ lệ theo dịch vụ: lần 1 = 100%, lần 2–4 = 30%, lần 5 = 10%, từ lần 6 = 0%. TT 39 Đ2 k4: lượt trước 01/01/2025 áp văn bản cũ.
+- **Áp dụng**: cơ sở KCB BHYT có khám bệnh · **Hiệu lực/hạn**: 01/01/2025
+- **Mức**: BẮT BUỘC
+- **Phần mềm phải**: đánh số thứ tự lần khám trong một lần đến khám (kể cả kéo sang ngày sau) và áp tỷ lệ theo dịch vụ ở cột 6 bảng kê (`BHYT-DATA-R21`); khám lại trong ngày tính lần 2+, cấp cứu tính lần mới; đếm lượt theo bàn khám và giờ tổ chức khám thực tế, cảnh báo trước ngưỡng; phần giảm do vượt định mức tách khỏi tiền cùng chi trả của người bệnh; cờ thời kỳ thiên tai, dịch để tắt quy tắc định mức.
+- **Bẫy**: TT 22/2023 hết HL nhưng định mức 65 lượt và quy tắc 30% **vẫn còn**, căn cứ là TT 35 Đ4b (TT 39). Viết tắt "100/30/10/0" là sai, lần 3 và 4 vẫn 30%.
+
+**Tổng**: 36 yêu cầu. BẮT BUỘC 32 (R01–R13, R15, R17–R26, R28–R33, R35, R36); BẮT BUỘC? 2 (R14; R16 phần yêu cầu phần mềm); NÊN 2 (R27 phần công cụ phần mềm; R34 dự thảo).
 
 ## 3. Pattern thiết kế
 
@@ -401,6 +416,7 @@ Dự thảo TT BTC về Cổng tiếp nhận dữ liệu (hướng dẫn NĐ 188
 | BHYT-GD-A30 | R32, R33 | Chức năng báo thẻ nghi vấn; luồng ký xác nhận khi người bệnh bỏ về | Ảnh, log | BẮT BUỘC |
 | BHYT-GD-A31 | R34 | p95 thời gian kết thúc lượt → Cổng tiếp nhận; ký có cần thao tác tay; hồ sơ có khóa sau đề nghị thanh toán | Thống kê, mô tả luồng ký | NÊN |
 | BHYT-GD-A32 | R35 | Dịch vụ theo yêu cầu cho người có thẻ: phiếu thông báo trước có chữ ký; `T_BNTT` tách `T_BNCCT` | Phiếu, XML1 | BẮT BUỘC |
+| BHYT-GD-A33 | R36 | Lượt khám 4 chuyên khoa ra tỷ lệ 100/30/30/30; khám lại trong ngày tính lần 2; bàn khám lượt 66 trở đi: tiền cùng chi trả của người bệnh không đổi | Bảng kê, XML3 | BẮT BUỘC |
 
 ## 5. Mốc thời gian
 
@@ -412,7 +428,7 @@ Dự thảo TT BTC về Cổng tiếp nhận dữ liệu (hướng dẫn NĐ 188
 | 15/08/2025 | NĐ 188 HL toàn bộ (Đ37–38); NĐ 146/2018, 75/2023, 02/2025 hết HL | Cơ sở | Đã qua |
 | 31/12/2025 | Hạn cuối dùng mẫu giấy hẹn, giấy chuyển tuyến cũ (TT 01 Đ15 k5 đ) | Cơ sở, vendor | Đã qua |
 | 01/01/2026 | Chậm nhất ký số (xác thực) dữ liệu chi phí KCB BHYT (NĐ 188 Đ69 k9) | Cơ sở, vendor | Đã qua |
-| 03/02/2026 | TT 09/2026/TT-BTC: thẻ BHYT điện tử (thứ cấp) | Cơ sở | Đã qua |
+| 03/02/2026 | TT 09/2026/TT-BTC: thẻ BHYT điện tử, không đòi thẻ giấy (Đ6 k3) | Cơ sở | Đã qua |
 | 10/02/2026 | TT 12/2026 có HL: Cổng, tài khoản, phản hồi 06/24/48 giờ, giám định | Cơ sở, BHXH | Đã qua |
 | 01/04/2026 | Mẫu 01/BH, 05/BH, 06/BH, 09/BH; danh mục 01–06/DM | Cơ sở, vendor | Đã qua |
 | 15/05/2026 | NĐ 90/2026 xử phạt (Đ84–95) | Cơ sở, người hành nghề | Đã qua |
@@ -440,6 +456,10 @@ Dự thảo TT BTC về Cổng tiếp nhận dữ liệu (hướng dẫn NĐ 188
 12. NĐ 166/2016 (căn cứ ban hành TT 48): NĐ 164/2025 Đ27 k3 chỉ ghi "không áp dụng" với BHXH bắt buộc, tự nguyện; phần BHYT còn áp dụng không: chưa xác minh.
 13. Bản OCR NĐ 188 Đ35 k2 lặp ký hiệu "đ"; thứ tự đúng c (gửi, ký số, xác thực), d (hạ tầng, nâng cấp HIS), đ (rà soát chi tăng). Trích "Đ35 k2 d" cho nghĩa vụ nâng cấp HIS.
 14. NĐ 90/2026 chỉ có bản OCR: trừ Đ95 k4 đã đối chiếu ảnh trang, các điều khác chỉ diễn giải.
+15. **CV 1804/BHXH-QLT** (BHXH VN, 04/08/2025: số định danh thay mã số BHXH, mã đối tượng tham gia, mức hưởng %) **≠ QĐ 1804/QĐ-BYT** (BYT, 2026: loại hình KCB, mã khoa). Luôn ghi đủ ký hiệu cơ quan.
+16. Ba hệ "mức hưởng" khác nhau: % theo PL I CV 1804; ký hiệu 1–5 in trên thẻ (QĐ 1351 sửa bởi 1697, mẫu QĐ 1666); `MUC_HUONG` trong XML (`BHYT-DATA-R11`). Đặc tả bắt "nhập mức hưởng 1–5 theo thẻ in" có căn cứ ở QĐ 1666, không phải CV 1804; mức áp dụng vẫn lấy theo Cổng.
+17. API thông tin thẻ kèm QĐ 241/QĐ-BTC (05/02/2026) dành cho hệ thống giải quyết TTHC của bộ, tỉnh, không phải API tra thẻ của Cổng giám định (CV 497/BHXH-CNTT).
+18. Trang `baohiemxahoi.gov.vn` không chết: lỗi "từ chối truy cập" là do server dùng TLS renegotiation cũ (curl/OpenSSL 3 cần bật `UnsafeLegacyRenegotiation`). `check_links.py` có thể báo chết giả.
 
 ## 7. Chưa xác minh / cần hỏi luật sư hoặc cơ quan
 
@@ -448,8 +468,9 @@ Dự thảo TT BTC về Cổng tiếp nhận dữ liệu (hướng dẫn NĐ 188
 3. **Thủ tục "xác thực" kết nối HIS** (NĐ 188 Đ22 k2, Đ68 k5 b): không thấy thủ tục chứng nhận/kiểm thử phần mềm; "quy định của Bộ trưởng BYT" về tiêu chuẩn kết nối là văn bản nào (TT 48? QĐ 130?); BHXH có sandbox chính thức không — hỏi BHXH VN (Trung tâm CNTT) và BYT.
 4. Số, ngày Công văn BHXH-CNTT kèm Phụ lục 01 hướng dẫn liên thông QĐ 3176; XSD `CHUKYDONVI` nằm ở mục Trợ giúp của Cổng (cần tài khoản).
 5. Cổng tiếp nhận dữ liệu y tế của BYT (TT 48 Đ7 k1 c; NĐ 188 Đ71 k1 c): còn vận hành, còn bắt buộc gửi song song không; quan hệ với HTTT quản lý KCB của TT 38/2024 (HTTT-BC).
-6. TT 09/2026/TT-BTC và QĐ 2555/QĐ-BYT: chưa đọc bản gốc; trang tin BHXH VN dẫn hai văn bản này từ chối truy cập khi kiểm tra 2026-10-06.
+6. Bản ký của QĐ 2555/QĐ-BYT (có số, ngày) chưa tìm thấy; nội dung đã đối chiếu bản BYT không số (2026-10-27). TT 09/2026/TT-BTC đã đọc bản sao y.
 7. **Liên thông CLS 01/01/2027**: Luật 51 Đ3 k4 giao Chính phủ quy định, NĐ 188 không có; dự thảo hiện có là thông tư BYT. Nếu đến hạn chưa có văn bản chi tiết thì áp dụng thế nào — luật sư (phối hợp CLS).
 8. Phần BHYT của NĐ 166/2016 còn hiệu lực không (bẫy 12).
 9. Mẫu 02/BH không nằm trong danh sách áp dụng từ 01/04/2026 (TT 12 Đ17 k1) nhưng Đ17 k2 cho dùng mẫu cũ hết quyết toán quý I/2026 → suy ra áp dụng từ quyết toán quý II/2026 (suy luận).
 10. Bản TT 48 trên datafiles/Công báo chưa tìm thấy; đang dùng bản ký số do SYT Hà Tĩnh và TTYT Ninh Sơn đăng lại.
+11. QĐ 1351/QĐ-BHXH: chưa mở bản gốc (nhất là Đ2, ký hiệu mức hưởng 5); QĐ 1351, 1697 còn hiệu lực sau NĐ 188 và CV 1804 không. Mã kết quả 052, 053 (ký tự thứ 3, thứ 4–5) giả định mã thẻ 15 ký tự: khi tra bằng mã số 10 số hoặc số định danh có còn trả không — hỏi BHXH VN (Trung tâm CNTT).

@@ -1,6 +1,6 @@
 # SKDT — Sổ sức khỏe điện tử, VNeID và định danh người bệnh
 
-> Kiểm tra lần cuối: 2026-10-06 · Áp dụng: BV công, BV tư, phòng khám (kể cả PK không ký hợp đồng BHYT), cơ sở tổ chức KSK định kỳ/sàng lọc, vendor HIS/app y tế · Research gốc: `research/deep/SKDT.md`
+> Kiểm tra lần cuối: 2026-10-27 · Áp dụng: BV công, BV tư, phòng khám (kể cả PK không ký hợp đồng BHYT), cơ sở tổ chức KSK định kỳ/sàng lọc, vendor HIS/app y tế · Research gốc: `research/deep/SKDT.md`
 
 Phạm vi: liên thông Sổ SKĐT VNeID từ lượt KCB, dữ liệu KSK định kỳ/sàng lọc (QĐ 1551), mã định danh y tế, căn cước, định danh và xác thực điện tử, người bệnh không giấy tờ/trẻ em/người nước ngoài, hai hệ mã cơ sở. Ngoài phạm vi: xuất trình thẻ BHYT bằng căn cước/VNeID → BHYT-GD-R01..R05; chuẩn XML 130/4750/3176 → BHYT-DATA; MPI trong HSBA → EMR-R05; căn cứ xử lý, quyền chủ thể → DLCN; giấy chứng sinh, báo tử, giấy nghỉ BHXH, KSK lái xe → GIAYTO. Tài liệu nghiên cứu, không phải ý kiến pháp lý.
 
@@ -57,7 +57,7 @@ Phạm vi: liên thông Sổ SKĐT VNeID từ lượt KCB, dữ liệu KSK đị
 | 26/2023/QH15 | Luật Căn cước | 01/07/2024 | Còn hiệu lực | gốc | [PDF](https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/01/luat26.pdf) |
 | 70/2024/NĐ-CP (25/06/2024) | Hướng dẫn Luật Căn cước | 01/07/2024 | Còn hiệu lực | gốc-OCR (Đ1–14) | [VB 210497](https://vanban.chinhphu.vn/?pageid=27160&docid=210497) · [PDF](https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/6/70-nd.signed.pdf) |
 | 69/2024/NĐ-CP (25/06/2024) | Định danh và xác thực điện tử | 01/07/2024 | Còn hiệu lực; thay NĐ 59/2022 | gốc-OCR | [PDF](https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/6/69-cp.signed.pdf) |
-| 15/2023/QH15 (VBHN 26/VBHN-VPQH) | Luật KCB: Đ2 k10, Đ72, Đ73 | 01/01/2024 | Còn hiệu lực | gốc | [PDF VBHN](https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/26-vbhn-vpqh.pdf) |
+| 15/2023/QH15 (VBHN 26/VBHN-VPQH) | Luật KCB: Đ2 k10, Đ7 k2, Đ40, Đ72, Đ73 | 01/01/2024 | Còn hiệu lực | gốc | [PDF VBHN](https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/26-vbhn-vpqh.pdf) |
 | 826/QĐ-TTg (11/05/2026) | Chương trình Đề án 06 giai đoạn 2026–2030 | Từ ngày ký | Còn hiệu lực; tiếp nối QĐ 06/QĐ-TTg | gốc-OCR (bảng mục tiêu đã đối chiếu ảnh) | [PDF](https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/4/826-ttg.signed.pdf) |
 | 940/QĐ-TTg (26/05/2026) | Đề án phát triển ứng dụng VNeID 2026–2030 | Từ ngày ký | Còn hiệu lực (bối cảnh) | gốc-OCR | [VB 218266](https://vanban.chinhphu.vn/?pageid=27160&docid=218266) · [PDF](https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/5/940-ttg.signed.pdf) |
 | 17/CT-TTg (06/05/2026) | KSK định kỳ, khám sàng lọc miễn phí | Từ ngày ký | Còn hiệu lực | thứ cấp | [baochinhphu (báo, bối cảnh)](https://baochinhphu.vn/tu-nam-2026-to-chuc-kham-suc-khoe-dinh-ky-mien-phi-cho-nguoi-dan-102260506175509173.htm) |
@@ -138,7 +138,7 @@ Tham chiếu không đào lại ở đây: TT 13/2025 Đ1 k3 và CV 365 PL III.1
 ### B. Trường hợp đặc biệt về định danh
 
 ### SKDT-R10 — Người bệnh vô danh, không giấy tờ
-- **Căn cứ**: Luật KCB Đ2 k10 (người bệnh không có thân nhân: cấp cứu không giấy tờ, không thân nhân, không thông tin liên lạc; không làm chủ nhận thức; trẻ dưới 06 tháng bị bỏ rơi), Đ72 k1 (kiểm kê, lập biên bản, lưu giữ tài sản), k2 (sau **48 giờ** không xác định được thân nhân thì thông báo UBND cấp xã; chuyển trẻ bị bỏ rơi vào cơ sở trợ giúp xã hội), Đ73 (tử vong không giấy tờ: thông báo UBND xã trong **24 giờ**; lấy và lưu mẫu thi thể).
+- **Căn cứ**: Luật KCB Đ7 k2 (cấm "từ chối hoặc cố ý chậm cấp cứu người bệnh", trừ Đ40); Đ2 k10 (người bệnh không có thân nhân: cấp cứu không giấy tờ, không thân nhân, không thông tin liên lạc; không làm chủ nhận thức; trẻ dưới 06 tháng bị bỏ rơi), Đ72 k1 (kiểm kê, lập biên bản, lưu giữ tài sản), k2 (sau **48 giờ** không xác định được thân nhân thì thông báo UBND cấp xã; chuyển trẻ bị bỏ rơi vào cơ sở trợ giúp xã hội), Đ73 (tử vong không giấy tờ: thông báo UBND xã trong **24 giờ**; lấy và lưu mẫu thi thể).
 - **Áp dụng**: BV công, BV tư, PK có cấp cứu · **Hiệu lực/hạn**: 01/01/2024
 - **Mức**: BẮT BUỘC (quy trình Đ72, Đ73) · NÊN (cách đánh mã tạm)
 - **Phần mềm phải**: tạo hồ sơ "chưa xác định danh tính" bằng mã tạm có quy tắc (ví dụ `VD-<mã cơ sở>-<yyyymmdd>-<seq>`), giới và tuổi ước lượng, đặc điểm nhận dạng; đồng hồ 48 giờ nhắc thông báo UBND xã; biên bản tài sản gắn hồ sơ; xác định được danh tính thì gộp về hồ sơ có số định danh (mã tạm thành alias, ghi người gộp, lý do); chỉ gửi Sổ SKĐT khi có định danh hợp lệ hoặc gửi lại sau khi gộp (suy luận).
