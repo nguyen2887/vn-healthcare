@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.4 — 2026-10-29
+
+- **SKDT**: QĐ 1551/QĐ-BYT thêm link bản gốc trên trang Cục Quản lý Khám, chữa bệnh (kcb.vn), giữ bản SYT Lai Châu làm dự phòng; hai bản cùng 224 trang, cùng nội dung. SKDT-R17 thêm bẫy: chữ "EMR" trong QĐ 1551 chỉ là tên miền `emrhub.vn` và khối trong sơ đồ PL03, không phải nghĩa vụ gửi bệnh án điện tử.
+
 ## 0.2.3 — 2026-10-28
 
 Đợt xác minh thứ hai từ các ghi chú field BHYT 04–08 và NĐ 161/2026 (`research/field/2026-10-27-bhyt04-tro-di.md`, `2026-10-28-luong-co-so-nd161-2026.md`).
